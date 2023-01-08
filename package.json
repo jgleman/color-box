@@ -1,6 +1,6 @@
 {
   "name": "@jgleman/color-box",
-  "version": "0.0.1",
+  "version": "0.0.1-alpha",
   "description": "Another JavaScript/TypeScript Color Utility Library",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
