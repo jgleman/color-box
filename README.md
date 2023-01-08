@@ -29,25 +29,25 @@ npm install --save @jgleman/color-box
 
 JavaScript does not have a native color object, this library provides one:
 
-```
+```JavaScript
 import { Color } from "@jgleman/color-box"
 ```
 
 To create a new color, you can provide a color as a string in either hex:
 
-```
+```JavaScript
 const myColor = new Color("#336699");
 ```
 
 RGB:
 
-```
+```JavaScript
 const myColor = new Color("rgb(51 102 153)");
 ```
 
 HSL:
 
-```
+```JavaScript
 const myColor = new Color("hsl(210 50% 40%)");
 ```
 
