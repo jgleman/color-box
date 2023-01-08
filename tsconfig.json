@@ -1,8 +1,9 @@
 {
   "compilerOptions": {
-    "target": "es6",
+    "target": "es2015",
     "lib": ["es2021"],
     "strict": true,
+    "module": "es2022",
     "moduleResolution": "nodenext",
     "noUnusedLocals": true,
     "noUnusedParameters": true,
@@ -16,7 +17,10 @@
     "esModuleInterop": true,
     "allowJs": true,
     "skipLibCheck": true,
-    "outDir": "dist"
+    "outDir": "dist/esm",
+    "declaration": true,
+    "declarationDir": "dist/types"
   },
+  "include": ["src"],
   "exclude": ["node_modules", "dist"]
 }

@@ -1,5 +1,5 @@
 import { HSLColor } from "./types";
-import Color from "./Color";
+import { Color } from "./Color";
 
 export function lighten(color: Color, amount: number): Color {
   const asHSL: HSLColor = { ...color.hsl };

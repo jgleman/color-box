@@ -12,7 +12,7 @@ export interface ColorType {
   hsl: HSLColor;
 }
 
-class Color implements ColorType {
+export class Color implements ColorType {
   hex!: HexColor;
   rgb!: RGBColor;
   hsl!: HSLColor;
