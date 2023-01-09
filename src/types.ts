@@ -1,5 +1,3 @@
-export type HexColor = string;
-
 export type RGBColor = {
   r: number;
   g: number;
@@ -11,3 +9,9 @@ export type HSLColor = {
   s: number;
   l: number;
 };
+
+export interface ColorType {
+  hex: string;
+  rgb: RGBColor;
+  hsl: HSLColor;
+}

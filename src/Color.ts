@@ -1,4 +1,4 @@
-import { HexColor, RGBColor, HSLColor } from "./types";
+import { RGBColor, HSLColor, ColorType } from "./types";
 import { hexToRGB } from "./internal/hexToRGB";
 import { rgbToHSL } from "./internal/rgbToHSL";
 import { rgbToHex } from "./internal/rgbToHex";
@@ -6,14 +6,8 @@ import { hslToRGB } from "./internal/hslToRGB";
 import { parseHSL } from "./internal/parseHSL";
 import { parseRGB } from "./internal/parseRGB";
 
-export interface ColorType {
-  hex: HexColor;
-  rgb: RGBColor;
-  hsl: HSLColor;
-}
-
 export class Color implements ColorType {
-  hex!: HexColor;
+  hex!: string;
   rgb!: RGBColor;
   hsl!: HSLColor;
 
@@ -30,11 +24,11 @@ export class Color implements ColorType {
         this.hex = color;
         this.rgb = hexToRGB(color);
         this.hsl = rgbToHSL(this.rgb);
-      } else if (color.startsWith("hsl(") || color.startsWith("hsla(")) {
+      } else if (color.match(/^(hsla?)\(.*\)/)) {
         this.hsl = parseHSL(color);
         this.rgb = hslToRGB(this.hsl);
         this.hex = rgbToHex(this.rgb);
-      } else if (color.startsWith("rgb(") || color.startsWith("rgba(")) {
+      } else if (color.match(/^(rgba?)\(.*\)/)) {
         this.rgb = parseRGB(color);
         this.hsl = rgbToHSL(this.rgb);
         this.hex = rgbToHex(this.rgb);
