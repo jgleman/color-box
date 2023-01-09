@@ -1,6 +1,6 @@
-import { HexColor, RGBColor } from "../types";
+import { RGBColor } from "../types";
 
-export function hexToRGB(hexColor: HexColor): RGBColor {
+export function hexToRGB(hexColor: string): RGBColor {
   const rgbParts: RGBColor = { r: 0, g: 0, b: 0 };
 
   rgbParts.r = parseInt(hexColor.substring(0, 2), 16);
