@@ -4,7 +4,7 @@ import { RGBColor, HSLColor } from "../types";
 // https://en.wikipedia.org/wiki/HSL_and_HSV#From_RGB
 
 export function hslToRGB(hslColor: HSLColor): RGBColor {
-  const { h, s, l } = hslColor;
+  const { h, s, l, a } = hslColor;
 
   // chroma
   const C = (1 - Math.abs(2 * l - 1)) * s;
@@ -48,6 +48,7 @@ export function hslToRGB(hslColor: HSLColor): RGBColor {
     r: (r1 + M) * 255,
     g: (g1 + M) * 255,
     b: (b1 + M) * 255,
+    a: a,
   };
 
   return rgb;

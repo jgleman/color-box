@@ -7,8 +7,11 @@ export function rgbString(color: Color): string {
   const r1 = Math.round(color.rgb.r);
   const g1 = Math.round(color.rgb.g);
   const b1 = Math.round(color.rgb.b);
+  const a1 = color.rgb.a ? Math.round(color.rgb.a * 100) / 100 : 0;
 
-  const rgbAsCSS: string = `rgb(${r1} ${g1} ${b1})`;
-
-  return rgbAsCSS;
+  if (typeof color.rgb.a !== "undefined") {
+    return `rgb(${r1} ${g1} ${b1} / ${a1})`;
+  } else {
+    return `rgb(${r1} ${g1} ${b1})`;
+  }
 }
