@@ -2,12 +2,13 @@ import { RGBColor, HSLColor } from "../types";
 
 // Adapted from https://en.wikipedia.org/wiki/HSL_and_HSV#From_RGB
 export function rgbToHSL(rgbColor: RGBColor): HSLColor {
-  const { r, g, b } = rgbColor;
+  const { r, g, b, a } = rgbColor;
 
   // step one, scale RGB values to fit between 0..1
   const R = r / 255;
   const G = g / 255;
   const B = b / 255;
+  const A = a ? (a * 100) / 100 : undefined;
 
   // step two, get the min and max values
   const min = Math.min(R, G, B);
@@ -40,6 +41,7 @@ export function rgbToHSL(rgbColor: RGBColor): HSLColor {
     h: H,
     s: S,
     l: L,
+    a: A,
   };
 
   return hsl;
