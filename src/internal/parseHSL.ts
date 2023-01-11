@@ -24,7 +24,7 @@ function parseHue(hue: string): number {
 }
 
 export function parseHSL(hslAsString: string): HSLColor {
-  const hslParts: HSLColor = { h: 0, s: 0, l: 0 };
+  const hslParts: HSLColor = { h: 0, s: 0, l: 0, a: undefined };
   // extract the values between the parens
   const openParenIndex = hslAsString.indexOf("(");
   const step1 = hslAsString.substring(
@@ -39,7 +39,6 @@ export function parseHSL(hslAsString: string): HSLColor {
     .filter(Boolean);
 
   // if we don't have at least 3 values, assume invalid HSL entered
-  // we'll eventually support to 3 or 4 when I add support alpha channels
   if (rawParts.length !== 3 && rawParts.length !== 4) {
     return hslParts;
   }
@@ -47,6 +46,7 @@ export function parseHSL(hslAsString: string): HSLColor {
   hslParts.h = parseHue(rawParts[0]);
   hslParts.s = parsePercentage(rawParts[1]);
   hslParts.l = parsePercentage(rawParts[2]);
+  hslParts.a = rawParts[3] ? parsePercentage(rawParts[3]) : undefined;
 
   return hslParts;
 }
