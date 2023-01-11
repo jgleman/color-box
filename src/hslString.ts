@@ -10,7 +10,7 @@ export function hslString(color: Color): string {
   const a1 = color.hsl.a ? Math.round(color.hsl.a * 100) : undefined;
 
   if (typeof a1 !== "undefined") {
-    return `hsl(${h1} ${s1}% ${l1}%/ ${a1}%)`;
+    return `hsl(${h1} ${s1}% ${l1}% / ${a1}%)`;
   } else {
     return `hsl(${h1} ${s1}% ${l1}%)`;
   }
