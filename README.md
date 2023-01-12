@@ -1,23 +1,23 @@
 # color-box
 
-Another JS/TS Color Utility Library (inspired by [date-fns](https://date-fns.org)).
+Another JavaScript/TypeScript Color Utility Library (inspired by [date-fns](https://date-fns.org)).
 
-I started writing this set of color utilities as a way for me to learn
+_I started writing this set of color utilities as a way for me to learn
 TypeScript and publishing on npm. If you need a color library today, there are
 quite a few libraries out there for working with colors in
-JavaScript already.
+JavaScript already._
 
-To Do List:
+### About
 
-- more functionality (mix, desaturate, etc)
-- alpha support
-- additional color formats
-- clean up API
-- testing
-- documentation
+This library aims to work like date-fns does for dates, but for colors. This library provides a basic Color object which is then passed to the utility functions. Any utility function that changes the passed in color, does so immutably, returning a new color.
+
+### To Do List
+
+- more functionality
+- additional color formats (hsv, cmyk)
+- tests (I plan to make any color manipulation functions comply with the Sass spec for the corresponding function)
+- optimizations
 - so, so much more
-
-Usage (eventually):
 
 ### Install
 
@@ -25,9 +25,9 @@ Usage (eventually):
 npm install --save @jgleman/color-box
 ```
 
-### Use
+### Quick Usage
 
-JavaScript does not have a native color object, this library provides one:
+See the [documentation](https://jgleman.github.io/color-box/) for more info on all available functions.
 
 ```JavaScript
 import { Color } from "@jgleman/color-box"
@@ -51,7 +51,7 @@ HSL:
 const myColor = new Color("hsl(210 50% 40%)");
 ```
 
-A color object represents the color you have entered internally as HEX, RGB and HSL. Once you have created a Color, you can use that color in any of the provided functions:
+A `Color` object represents the color you have entered internally as HEX, RGB and HSL. Once you have created a Color, you can use that color in any of the provided functions:
 
 ```JavaScript
 import { Color, darken, hexString } from "@jgleman/color-box";
@@ -61,20 +61,3 @@ const myDarkerColor = darken(myColor, 20);
 console.log(hexString(myDarkerColor));
 // #1a334d
 ```
-
-- `hexString(color: Color): string`
-  - Returns the color in hexadecimal, formatted as CSS property value e.g. `#336699`.
-- `rgbString(color: Color): string`
-  - Returns the color in RGB, formatted as CSS property value e.g. `rgb(51 102 153)`.
-- `hslString(color: Color): string`
-  - Returns the color in HSL, formatted as CSS property value e.g. `hsl(210 50% 40%)`.
-- `lighten(color: Color, percentage: number): Color`
-  - Returns a new Color object.
-- `darken(color: Color, percentage: number): Color`
-  - Returns a new Color object.
-- `contrast(color1: Color, color2: Color): string`
-  - Returns a string representing the contrast ratio as defined by [WCAG 2](https://www.w3.org/WAI/GL/wiki/Contrast_ratio) , e.g. 4.3:1.
-- `relativeLuminance(color: Color): number`
-  - Returns the relative brightness of a colors, normalized to 0 for darkest black and 1 for lightest white [WCAG 2](https://www.w3.org/WAI/GL/wiki/Relative_luminance).
-- `isColorValid(color: Color): Boolean`
-  - Returns true if the Color object contains a valid color, false otherwise.
