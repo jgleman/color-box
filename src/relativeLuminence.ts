@@ -1,6 +1,10 @@
 import { RGBColor } from "./types";
-// implementation of:
-// http://www.w3.org/TR/WCAG20/#relativeluminancedef
+
+/**
+ * Implementation of http://www.w3.org/TR/WCAG20/#relativeluminancedef
+ *
+ * @returns The the relative luminance
+ */
 export function relativeLuminence(rgb: RGBColor): number {
   const r = rgb.r / 255;
   const g = rgb.g / 255;
