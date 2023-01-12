@@ -1,6 +1,9 @@
 import Color from "./Color";
 import { isColorValid } from "./isColorValid";
 
+/**
+ * @returns The a string of the RGB representation of a color, e.g. rgb(51 102 153)
+ */
 export function rgbString(color: Color): string {
   if (!isColorValid(color)) return "";
 

@@ -6,6 +6,7 @@ export * from "./desaturate";
 export * from "./grayscale";
 export * from "./hexString";
 export * from "./hslString";
+export * from "./isColorValid";
 export * from "./lighten";
 export * from "./mix";
 export * from "./relativeLuminence";

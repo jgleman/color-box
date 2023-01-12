@@ -1,6 +1,12 @@
 import { HSLColor } from "./types";
 import { Color } from "./Color";
-
+/**
+ * Makes the provided color more saturated by the specified amount.
+ *
+ * @param color the color to saturate.
+ * @param amount the amount to saturate the color.
+ * @returns the new saturated color
+ */
 export function saturate(color: Color, amount: number): Color {
   const asHSL: HSLColor = { ...color.hsl };
   asHSL.s += amount / 100;

@@ -1,6 +1,9 @@
 import Color from "./Color";
 import { isColorValid } from "./isColorValid";
 
+/**
+ * @returns The a string of the HSL representation of a color, e.g. hsl(210 50% 40%)
+ */
 export function hslString(color: Color): string {
   if (!isColorValid(color)) return "";
 
