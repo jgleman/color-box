@@ -16,22 +16,27 @@
 <a href="#color-box" id="color-box" style="color: inherit; text-decoration: none;">
   <h1>color-box</h1>
 </a>
-<p>Another JS/TS Color Utility Library (inspired by <a href="https://date-fns.org">date-fns</a>).</p>
-<p>I started writing this set of color utilities as a way for me to learn
+<p>Another JavaScript/TypeScript Color Utility Library (inspired by <a href="https://date-fns.org">date-fns</a>).</p>
+<p><em>I started writing this set of color utilities as a way for me to learn
 TypeScript and publishing on npm. If you need a color library today, there are
 quite a few libraries out there for working with colors in
-JavaScript already.</p>
-<p>To Do List:</p>
+JavaScript already.</em></p>
+
+<a href="#about" id="about" style="color: inherit; text-decoration: none;">
+  <h3>About</h3>
+</a>
+<p>This library aims to work like date-fns does for dates, but for colors. This library provides a basic Color object which is then passed to the utility functions. Any utility function that changes the passed in color, does so immutably, returning a new color.</p>
+
+<a href="#to-do-list" id="to-do-list" style="color: inherit; text-decoration: none;">
+  <h3>To Do List</h3>
+</a>
 <ul>
-<li>more functionality (mix, desaturate, etc)</li>
-<li>alpha support</li>
-<li>additional color formats</li>
-<li>clean up API</li>
-<li>testing</li>
-<li>documentation</li>
+<li>more functionality</li>
+<li>additional color formats (hsv, cmyk)</li>
+<li>tests (I plan to make any color manipulation functions comply with the Sass spec for the corresponding function)</li>
+<li>optimizations</li>
 <li>so, so much more</li>
 </ul>
-<p>Usage (eventually):</p>
 
 <a href="#install" id="install" style="color: inherit; text-decoration: none;">
   <h3>Install</h3>
@@ -39,10 +44,10 @@ JavaScript already.</p>
 <pre><code><span class="hl-0">npm</span><span class="hl-1"> </span><span class="hl-0">install</span><span class="hl-1"> --</span><span class="hl-0">save</span><span class="hl-1"> @</span><span class="hl-0">jgleman</span><span class="hl-1">/</span><span class="hl-0">color</span><span class="hl-1">-</span><span class="hl-0">box</span>
 </code></pre>
 
-<a href="#use" id="use" style="color: inherit; text-decoration: none;">
-  <h3>Use</h3>
+<a href="#quick-usage" id="quick-usage" style="color: inherit; text-decoration: none;">
+  <h3>Quick Usage</h3>
 </a>
-<p>JavaScript does not have a native color object, this library provides one:</p>
+<p>See the <a href="https://jgleman.github.io/color-box/">documentation</a> for more info on all available functions.</p>
 <pre><code class="language-JavaScript"><span class="hl-2">import</span><span class="hl-1"> { </span><span class="hl-0">Color</span><span class="hl-1"> } </span><span class="hl-2">from</span><span class="hl-1"> </span><span class="hl-3">&quot;@jgleman/color-box&quot;</span>
 </code></pre>
 <p>To create a new color, you can provide a color as a string in either hex:</p>
@@ -54,43 +59,9 @@ JavaScript already.</p>
 <p>HSL:</p>
 <pre><code class="language-JavaScript"><span class="hl-4">const</span><span class="hl-1"> </span><span class="hl-5">myColor</span><span class="hl-1"> = </span><span class="hl-4">new</span><span class="hl-1"> </span><span class="hl-6">Color</span><span class="hl-1">(</span><span class="hl-3">&quot;hsl(210 50% 40%)&quot;</span><span class="hl-1">);</span>
 </code></pre>
-<p>A color object represents the color you have entered internally as HEX, RGB and HSL. Once you have created a Color, you can use that color in any of the provided functions:</p>
+<p>A <code>Color</code> object represents the color you have entered internally as HEX, RGB and HSL. Once you have created a Color, you can use that color in any of the provided functions:</p>
 <pre><code class="language-JavaScript"><span class="hl-2">import</span><span class="hl-1"> { </span><span class="hl-0">Color</span><span class="hl-1">, </span><span class="hl-0">darken</span><span class="hl-1">, </span><span class="hl-0">hexString</span><span class="hl-1"> } </span><span class="hl-2">from</span><span class="hl-1"> </span><span class="hl-3">&quot;@jgleman/color-box&quot;</span><span class="hl-1">;</span><br/><br/><span class="hl-4">const</span><span class="hl-1"> </span><span class="hl-5">myColor</span><span class="hl-1"> = </span><span class="hl-4">new</span><span class="hl-1"> </span><span class="hl-6">Color</span><span class="hl-1">(</span><span class="hl-3">&quot;#336699&quot;</span><span class="hl-1">);</span><br/><span class="hl-4">const</span><span class="hl-1"> </span><span class="hl-5">myDarkerColor</span><span class="hl-1"> = </span><span class="hl-6">darken</span><span class="hl-1">(</span><span class="hl-0">myColor</span><span class="hl-1">, </span><span class="hl-7">20</span><span class="hl-1">);</span><br/><span class="hl-0">console</span><span class="hl-1">.</span><span class="hl-6">log</span><span class="hl-1">(</span><span class="hl-6">hexString</span><span class="hl-1">(</span><span class="hl-0">myDarkerColor</span><span class="hl-1">));</span><br/><span class="hl-8">// #1a334d</span>
 </code></pre>
-<ul>
-<li><code>hexString(color: Color): string</code><ul>
-<li>Returns the color in hexadecimal, formatted as CSS property value e.g. <code>#336699</code>.</li>
-</ul>
-</li>
-<li><code>rgbString(color: Color): string</code><ul>
-<li>Returns the color in RGB, formatted as CSS property value e.g. <code>rgb(51 102 153)</code>.</li>
-</ul>
-</li>
-<li><code>hslString(color: Color): string</code><ul>
-<li>Returns the color in HSL, formatted as CSS property value e.g. <code>hsl(210 50% 40%)</code>.</li>
-</ul>
-</li>
-<li><code>lighten(color: Color, percentage: number): Color</code><ul>
-<li>Returns a new Color object.</li>
-</ul>
-</li>
-<li><code>darken(color: Color, percentage: number): Color</code><ul>
-<li>Returns a new Color object.</li>
-</ul>
-</li>
-<li><code>contrast(color1: Color, color2: Color): string</code><ul>
-<li>Returns a string representing the contrast ratio as defined by <a href="https://www.w3.org/WAI/GL/wiki/Contrast_ratio">WCAG 2</a> , e.g. 4.3:1.</li>
-</ul>
-</li>
-<li><code>relativeLuminance(color: Color): number</code><ul>
-<li>Returns the relative brightness of a colors, normalized to 0 for darkest black and 1 for lightest white <a href="https://www.w3.org/WAI/GL/wiki/Relative_luminance">WCAG 2</a>.</li>
-</ul>
-</li>
-<li><code>isColorValid(color: Color): Boolean</code><ul>
-<li>Returns true if the Color object contains a valid color, false otherwise.</li>
-</ul>
-</li>
-</ul>
 </div></div>
 <div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 <div class="tsd-navigation settings">
