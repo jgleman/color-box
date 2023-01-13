@@ -9,6 +9,7 @@
     "clean:dist": "rimraf dist",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npm run clean:dist && pkgroll --target-es2020 --minify && npm run docs",
+    "watch": "pkgroll --watch --target-es2020 --minify",
     "docs": "typedoc --out docs src/index.ts"
   },
   "repository": {
