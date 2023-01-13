@@ -1,11 +1,11 @@
 import Color from "./Color";
 
 /**
- * Get the saturation value for a color.
+ * Get the hue value for a color.
  *
  * @param color the color to get the value from
- * @returns the saturation value
+ * @returns the hue value
  */
-export function getSaturation(color: Color): number {
-  return color.hsl.s;
+export function getHue(color: Color): number {
+  return color.hsl.h;
 }
