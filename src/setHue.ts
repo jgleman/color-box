@@ -4,7 +4,7 @@ import { HSLColor } from "./types";
 /**
  * Set the hue value for a color to a specific value.
  *
- * @param color the color to set the value from
+ * @param color the color to set the value for
  * @param hue a number between [0,360] representing hue
  * @returns a new color with the new hue value
  */
