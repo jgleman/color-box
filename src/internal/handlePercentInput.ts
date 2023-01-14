@@ -1,19 +1,8 @@
 import { stringToFloat } from "./stringToFloat";
 
+// if the input is a string, convert it to a float, if the string resolves to
+// equal 1, we return 100 (so 1.0 will be handled as 100%, if not, we return the value
 export function handlePercentInput(input: number | string): number {
-  let nAsFloat;
-  if (typeof input === "string") {
-    nAsFloat = stringToFloat(input);
-  } else {
-    nAsFloat = input;
-  }
-
-  // a number between 1 and 100
-  if (nAsFloat > 1) {
-    return nAsFloat / 100;
-    // 1, this is either 1% or 100%, we already handled 1.0 being 100%
-    // any 1 here is 1%
-  } else {
-    return nAsFloat;
-  }
+  const nAsFloat = typeof input === "string" ? stringToFloat(input) : input;
+  return nAsFloat > 1 ? nAsFloat / 100 : nAsFloat;
 }
