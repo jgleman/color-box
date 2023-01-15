@@ -15,7 +15,7 @@ export class Color implements ColorType {
     if (typeof color === "string") {
       if (color.charAt(0) === "#") {
         // is input a string
-        const hexColor = color.split("#")[1] || "";
+        const hexColor = color.split("#")[1];
         this.hex = hexColor;
         this.rgb = hexToRGB(hexColor);
         this.hsl = rgbToHSL(this.rgb);
@@ -36,12 +36,12 @@ export class Color implements ColorType {
         this.hsl = rgbToHSL(this.rgb);
         this.hex = rgbToHex(this.rgb);
       }
-    } else if (typeof color.h !== "undefined") {
+    } else if (typeof color?.h !== "undefined") {
       // is input a HSLColor
       this.hsl = color;
       this.rgb = hslToRGB(color);
       this.hex = rgbToHex(this.rgb);
-    } else if (typeof color.r !== "undefined") {
+    } else if (typeof color?.r !== "undefined") {
       // is input a HSLColor
       this.rgb = color;
       this.hsl = rgbToHSL(this.rgb);
