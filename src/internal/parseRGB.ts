@@ -32,7 +32,7 @@ export function parseRGB(rgbAsString: string): RGBColor {
   rgbParts.r = parseColorComponent(rawParts[0]);
   rgbParts.g = parseColorComponent(rawParts[1]);
   rgbParts.b = parseColorComponent(rawParts[2]);
-  rgbParts.a = rawParts[3] ? parseFloat(rawParts[3]) : undefined;
+  rgbParts.a = rawParts[3] ? parsePercentage(rawParts[3]) : undefined;
 
   return rgbParts;
 }

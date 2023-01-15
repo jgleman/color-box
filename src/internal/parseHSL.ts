@@ -9,11 +9,11 @@ function parseHue(hue: string): number {
   } else if (hue.includes("grad")) {
     rawH = parseFloat(hue.split("grad")[0]);
     // convert plane angle to deg
-    return rawH * (180 * 200);
+    return rawH * (180 / 200);
   } else if (hue.includes("rad")) {
     rawH = parseFloat(hue.split("rad")[0]);
     // convert radians to deg
-    return rawH * (180 * Math.PI);
+    return rawH * (180 / Math.PI);
   } else if (hue.includes("turn")) {
     rawH = parseFloat(hue.split("turn")[0]);
     // convert turns to deg

@@ -1,3 +1,5 @@
+import { handlePercentInput } from "./handlePercentInput";
 export function parsePercentage(percentAsString: string): number {
-  return parseInt(percentAsString.split("%")[0], 10) / 100;
+  const p = handlePercentInput(percentAsString.split("%")[0]);
+  return p > 1 ? p / 100 : p;
 }
