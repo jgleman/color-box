@@ -8,7 +8,7 @@
   "scripts": {
     "clean:dist": "rimraf dist",
     "test": "jest",
-    "build": "npm run clean:dist && pkgroll --target-es2020 --minify && npm run docs",
+    "build": "npm run clean:dist && npm run test && pkgroll --target-es2020 --minify && npm run docs",
     "watch": "pkgroll --watch --target-es2020 --minify",
     "docs": "typedoc --out docs src/index.ts"
   },
