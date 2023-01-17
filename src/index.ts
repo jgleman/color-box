@@ -16,7 +16,7 @@ export * from "./hexString";
 export * from "./hslString";
 export * from "./isColorValid";
 export * from "./lighten";
-export * from "./mix";
+//export * from "./mix";
 export * from "./relativeLuminence";
 export * from "./rgbString";
 export * from "./saturate";

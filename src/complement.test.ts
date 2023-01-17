@@ -3,8 +3,6 @@ import { Color } from "./Color";
 import { complement } from "./complement";
 import { hexString } from "./hexString";
 
-//
-
 test("complement of #ff0000 = #00ffff", () => {
   const color = new Color("#ff0000");
   expect(hexString(complement(color))).toBe("#00ffff");
