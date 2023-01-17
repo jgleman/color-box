@@ -9,13 +9,17 @@ JavaScript already._
 
 ### About
 
-This library aims to work like date-fns does for dates, but for colors. This library provides a basic Color object which is then passed to the utility functions. Any utility function that changes the passed in color, does so immutably, returning a new color.
+This library aims to work like date-fns does for dates, but for colors. This
+library provides a basic Color object which is then passed to the utility
+functions. Any utility function that changes the passed in color, does so
+immutably, returning a new color. Another goal is for any color manipulation
+functions to match the [Sass spec](https://github.com/sass/sass-spec) where it
+makes sense.
 
 ### To Do List
 
 - more functionality
 - additional color formats (hsv, cmyk)
-- tests (I plan to make any color manipulation functions comply with the Sass spec for the corresponding function)
 - optimizations
 - so, so much more
 
