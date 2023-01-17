@@ -6,8 +6,8 @@ import { RGBColor } from "./types";
  * color1 and color2. Both the weight and the relative opacity of each color
  * determines how much of each color is in the result.
  *
- * @param color1 the first color
- * @param color2 the second color
+ * @param color1
+ * @param color2
  * @param [weight=50]  The weight must be a number between 0 and 100 (inclusive) representing a percentage. A larger weight indicates that more of color1 should be used, and a smaller weight indicates that more of color2 should be used.
  * @returns the mixed color
  */
