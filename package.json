@@ -18,7 +18,13 @@
   },
   "keywords": [
     "typescript",
-    "color"
+    "javascript",
+    "color",
+    "colors",
+    "hex",
+    "rgb",
+    "hsl",
+    "css"
   ],
   "author": "Jason Gleman",
   "license": "MIT",
