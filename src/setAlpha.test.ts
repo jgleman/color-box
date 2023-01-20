@@ -3,6 +3,21 @@ import { Color } from "./Color";
 import { setAlpha } from "./setAlpha";
 import { hexString } from "./hexString";
 
+test("set alpha of 1 should return #33669903", () => {
+  const color = new Color("#336699");
+  expect(hexString(setAlpha(color, 1))).toBe("#33669903");
+});
+
+test("set alpha of 1.0 (number) should return #33669903", () => {
+  const color = new Color("#336699");
+  expect(hexString(setAlpha(color, 1.0))).toBe("#33669903");
+});
+
+test("set alpha of 0 should return #33669900", () => {
+  const color = new Color("#336699");
+  expect(hexString(setAlpha(color, 0))).toBe("#33669900");
+});
+
 test("set alpha of 0.5 should return #33669980", () => {
   const color = new Color("#336699");
   expect(hexString(setAlpha(color, 0.5))).toBe("#33669980");

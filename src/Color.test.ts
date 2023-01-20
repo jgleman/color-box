@@ -91,3 +91,8 @@ test("test that hsl(0.555turn 50% 50%) creates a color with hex value 4095bf", (
   const color = new Color("hsl(0.555turn 50% 50%)");
   expect(color.hex).toBe("4095bf");
 });
+
+test("test that empty string does... something", () => {
+  const color = new Color("");
+  expect(color.hex).toBe(undefined);
+});
