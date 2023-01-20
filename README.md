@@ -1,11 +1,6 @@
 # color-box
 
-Another JavaScript/TypeScript Color Utility Library (inspired by [date-fns](https://date-fns.org)).
-
-_I started writing this set of color utilities as a way for me to learn
-TypeScript and publishing on npm. If you need a color library today, there are
-quite a few libraries out there for working with colors in
-JavaScript already._
+A JavaScript/TypeScript Color Utility Library (inspired by [date-fns](https://date-fns.org)).
 
 ### About
 
@@ -16,11 +11,18 @@ immutably, returning a new color. Another goal is for any color manipulation
 functions to match the [Sass spec](https://github.com/sass/sass-spec) where it
 makes sense.
 
+- Modular, only use what you need. Supports tree-shaking.
+- Immutable, always returns a new color instance.
+- TypeScript support
+
 ### To Do List
 
-- more functionality
-- additional color formats (hsv, cmyk)
+- more functionality, including:
+  - adjustSaturation, adjustLightness, getRed, setRed, getGreen, setGreen,
+    getBlue, setBlue, adjustAlpha, removeAlpha, invert
+- additional color formats (hsv, hwb, cmyk)
 - optimizations
+- demo/project Web site
 - so, so much more
 
 ### Install

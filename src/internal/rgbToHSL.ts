@@ -8,7 +8,7 @@ export function rgbToHSL(rgbColor: RGBColor): HSLColor {
   const R = r / 255;
   const G = g / 255;
   const B = b / 255;
-  const A = a ? (a * 100) / 100 : undefined;
+  const A = typeof a === "number" ? (a * 100) / 100 : undefined;
 
   // step two, get the min and max values
   const min = Math.min(R, G, B);

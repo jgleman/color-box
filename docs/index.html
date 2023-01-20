@@ -16,11 +16,7 @@
 <a href="#color-box" id="color-box" style="color: inherit; text-decoration: none;">
   <h1>color-box</h1>
 </a>
-<p>Another JavaScript/TypeScript Color Utility Library (inspired by <a href="https://date-fns.org">date-fns</a>).</p>
-<p><em>I started writing this set of color utilities as a way for me to learn
-TypeScript and publishing on npm. If you need a color library today, there are
-quite a few libraries out there for working with colors in
-JavaScript already.</em></p>
+<p>A JavaScript/TypeScript Color Utility Library (inspired by <a href="https://date-fns.org">date-fns</a>).</p>
 
 <a href="#about" id="about" style="color: inherit; text-decoration: none;">
   <h3>About</h3>
@@ -31,14 +27,24 @@ functions. Any utility function that changes the passed in color, does so
 immutably, returning a new color. Another goal is for any color manipulation
 functions to match the <a href="https://github.com/sass/sass-spec">Sass spec</a> where it
 makes sense.</p>
+<ul>
+<li>Modular, only use what you need. Supports tree-shaking.</li>
+<li>Immutable, always returns a new color instance.</li>
+<li>TypeScript support</li>
+</ul>
 
 <a href="#to-do-list" id="to-do-list" style="color: inherit; text-decoration: none;">
   <h3>To Do List</h3>
 </a>
 <ul>
-<li>more functionality</li>
-<li>additional color formats (hsv, cmyk)</li>
+<li>more functionality, including:<ul>
+<li>adjustSaturation, adjustLightness, getRed, setRed, getGreen, setGreen,
+getBlue, setBlue, adjustAlpha, removeAlpha, invert</li>
+</ul>
+</li>
+<li>additional color formats (hsv, hwb, cmyk)</li>
 <li>optimizations</li>
+<li>demo/project Web site</li>
 <li>so, so much more</li>
 </ul>
 

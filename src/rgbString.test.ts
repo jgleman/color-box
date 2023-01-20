@@ -26,3 +26,8 @@ test("rgb string of empty string is empty", () => {
   const color = new Color("");
   expect(rgbString(color)).toBe("");
 });
+
+test("rgb string of undefined is rgb(0 0 0)", () => {
+  const color = new Color(undefined);
+  expect(rgbString(color)).toBe("rgb(0 0 0)");
+});
