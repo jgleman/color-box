@@ -6,14 +6,20 @@ import { handlePercentInput } from "./internal/handlePercentInput";
  * Set the saturation value for a color to a specific value.
  *
  * @param color the color to set the value for
- * @param saturation a number between [0,1.0] or 0 and 100 representing
- * saturation as a percentage (1 will be treated at 1% whereas 1.0 will treated
- * as 1%
+ * @param saturation a number or string between [0,1.0] or 0 and 100 representing
+ * lightness as a percentage (1 will be treated at 1% whereas 1.0 will treated
+ * as 1%, however, 1.0 must be entered as a string because JavaScript
+ * cannot distinguish between 1 and 1.0 as a number.
  * @returns a new color with the new saturation value
  */
 
-export function setSaturation(color: Color, saturation: number): Color {
-  if (isNaN(saturation) || saturation < 0 || saturation > 100) {
+export function setSaturation(
+  color: Color,
+  saturation: number | string
+): Color {
+  const validate =
+    typeof saturation === "string" ? parseFloat(saturation) : saturation;
+  if (isNaN(validate) || validate < 0 || validate > 100) {
     throw new Error("Saturation must be between 0.0 and 1.0 or 0 and 100");
   }
 
