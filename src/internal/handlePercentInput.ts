@@ -9,7 +9,6 @@ import { stringToFloat } from "./stringToFloat";
 // if the user enters a string, we are fine, 1.0 will be treated as 100% as
 // expected, if the user enters 1.0 as a number, it will be treated as 1%.
 export function handlePercentInput(input: number | string): number {
-  if (typeof input === "number" && input === 1) return input / 100;
   const nAsFloat = typeof input === "string" ? stringToFloat(input) : input;
-  return nAsFloat > 1 ? nAsFloat / 100 : nAsFloat;
+  return nAsFloat >= 1 ? nAsFloat / 100 : nAsFloat;
 }

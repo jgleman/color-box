@@ -8,9 +8,24 @@ test("set alpha of 1 should return #33669903", () => {
   expect(hexString(setAlpha(color, 1))).toBe("#33669903");
 });
 
+test("set alpha of 1 (string) should return #33669903", () => {
+  const color = new Color("#336699");
+  expect(hexString(setAlpha(color, "1"))).toBe("#33669903");
+});
+
 test("set alpha of 1.0 (number) should return #33669903", () => {
   const color = new Color("#336699");
   expect(hexString(setAlpha(color, 1.0))).toBe("#33669903");
+});
+
+test("set alpha of 0.1 should return #33669903", () => {
+  const color = new Color("#336699");
+  expect(hexString(setAlpha(color, 1.0))).toBe("#33669903");
+});
+
+test("set alpha of 1.0 (string) should return #33669903ff", () => {
+  const color = new Color("#336699");
+  expect(hexString(setAlpha(color, "1.0"))).toBe("#336699ff");
 });
 
 test("set alpha of 0 should return #33669900", () => {
