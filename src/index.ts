@@ -7,6 +7,7 @@ export * from "./desaturate";
 export * from "./getAlpha";
 export * from "./setAlpha";
 export * from "./getHue";
+export * from "./setHue";
 export * from "./getSaturation";
 export * from "./setSaturation";
 export * from "./getLightness";
