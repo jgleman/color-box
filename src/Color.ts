@@ -21,7 +21,10 @@ export class Color implements ColorType {
         this.hsl = rgbToHSL(this.rgb);
       } else if (
         typeof color === "string" &&
-        (color.length === 6 || color.length === 8)
+        (color.length === 3 ||
+          color.length === 4 ||
+          color.length === 6 ||
+          color.length === 8)
       ) {
         // is input a HexColor
         this.hex = color;
