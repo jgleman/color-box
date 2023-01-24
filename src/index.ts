@@ -13,6 +13,7 @@ export * from "./setSaturation";
 export * from "./getLightness";
 export * from "./setLightness";
 export * from "./grayscale";
+export * from "./getRgb";
 export * from "./hexString";
 export * from "./hslString";
 export * from "./isColorValid";

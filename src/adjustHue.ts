@@ -1,5 +1,6 @@
 import { HSLColor } from "./types";
 import Color from "./Color";
+import { isColorValid } from "./isColorValid";
 
 /**
  * Adjust the hue by the specified amount.
@@ -9,10 +10,13 @@ import Color from "./Color";
  * @returns the adjusted color
  */
 export function adjustHue(color: Color, amount: number): Color {
-  const asHSL: HSLColor = { ...color.hsl };
+  if (!isColorValid(color)) throw "Invalid Color";
+
   if (amount < -360 || amount > 360) {
     throw new Error("Amount must be between -360 and 360");
   }
+
+  const asHSL: HSLColor = { ...color.hsl };
   asHSL.h += amount;
 
   if (asHSL.h > 360) asHSL.h -= 360;
