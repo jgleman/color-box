@@ -14,3 +14,10 @@ test("set hue of 361 should thow an error", () => {
     hexString(setHue(color, 361));
   }).toThrow("Amount must be between 0 and 360");
 });
+
+test("setHue, color is missing, result should be error", () => {
+  expect(() => {
+    //@ts-ignore
+    expect(setHue());
+  }).toThrow("Invalid Color");
+});

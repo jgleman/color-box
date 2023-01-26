@@ -1,7 +1,7 @@
 import Color from "./Color";
 import { RGBColor } from "./types";
 import { handlePercentInput } from "./internal/handlePercentInput";
-
+import { isColorValid } from "./isColorValid";
 /**
  * Set the alpha value for a color to a specific value.
  *
@@ -14,6 +14,7 @@ import { handlePercentInput } from "./internal/handlePercentInput";
  */
 
 export function setAlpha(color: Color, alpha: number | string): Color {
+  if (!isColorValid(color)) throw "Invalid Color";
   const validate = typeof alpha === "string" ? parseFloat(alpha) : alpha;
   if (isNaN(validate) || validate < 0 || validate > 100) {
     throw new Error("Alpha must be between 0.0 and 1.0 or 0 and 100");

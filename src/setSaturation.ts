@@ -1,7 +1,7 @@
 import Color from "./Color";
 import { HSLColor } from "./types";
 import { handlePercentInput } from "./internal/handlePercentInput";
-
+import { isColorValid } from "./isColorValid";
 /**
  * Set the saturation value for a color to a specific value.
  *
@@ -17,6 +17,7 @@ export function setSaturation(
   color: Color,
   saturation: number | string
 ): Color {
+  if (!isColorValid(color)) throw "Invalid Color";
   const validate =
     typeof saturation === "string" ? parseFloat(saturation) : saturation;
   if (isNaN(validate) || validate < 0 || validate > 100) {

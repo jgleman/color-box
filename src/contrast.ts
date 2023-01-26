@@ -11,8 +11,8 @@ import { relativeLuminence } from "./relativeLuminence";
 export function contrast(color1: Color, color2: Color): string {
   if (!isColorValid(color1)) throw "Invalid Color (color1)";
   if (!isColorValid(color2)) throw "Invalid Color (color2)";
-  let lum1 = relativeLuminence(color1.rgb);
-  let lum2 = relativeLuminence(color2.rgb);
+  let lum1 = relativeLuminence(color1);
+  let lum2 = relativeLuminence(color2);
 
   const brightest = Math.max(lum1, lum2);
   const darkest = Math.min(lum1, lum2);

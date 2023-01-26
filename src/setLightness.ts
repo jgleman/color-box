@@ -1,7 +1,7 @@
 import Color from "./Color";
 import { HSLColor } from "./types";
 import { handlePercentInput } from "./internal/handlePercentInput";
-
+import { isColorValid } from "./isColorValid";
 /**
  * Set the lightness value for a color to a specific value.
  *
@@ -14,6 +14,7 @@ import { handlePercentInput } from "./internal/handlePercentInput";
  */
 
 export function setLightness(color: Color, lightness: number | string): Color {
+  if (!isColorValid(color)) throw "Invalid Color";
   const validate =
     typeof lightness === "string" ? parseFloat(lightness) : lightness;
   if (isNaN(validate) || validate < 0 || validate > 100) {
