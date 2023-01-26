@@ -2,6 +2,8 @@
 
 A JavaScript/TypeScript Color Utility Library (inspired by [date-fns](https://date-fns.org)).
 
+[Demo Website](https://jgleman.com/color-box/) (work in progress) | [Documentation](https://jgleman.github.io/color-box/)
+
 ### About
 
 This library aims to work like date-fns does for dates, but for colors. This
@@ -17,13 +19,10 @@ makes sense.
 
 ### To Do List
 
-- more functionality, including:
-  - adjustSaturation, adjustLightness, getRed, setRed, getGreen, setGreen,
-    getBlue, setBlue, adjustAlpha, removeAlpha, invert
-- additional color formats (hsv, hwb, cmyk)
+- more functionality
+- additional color formats (hsv, hwb, cmyk, stretch goal: oklch, oklab, other CSS4 colors)
 - optimizations
-- demo/project Web site
-- so, so much more
+- so much more
 
 ### Install
 
