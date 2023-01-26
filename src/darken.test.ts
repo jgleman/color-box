@@ -25,7 +25,7 @@ test("darken #ff0000 0.5% = #fc0000", () => {
   expect(hexString(darken(color, 0.5))).toBe("#fc0000");
 });
 
-test("contrast color is missing, result should be error", () => {
+test("darken, color is missing, result should be error", () => {
   expect(() => {
     //@ts-ignore
     expect(darken());
