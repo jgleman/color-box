@@ -1,4 +1,5 @@
 import Color from "./Color";
+import { isColorValid } from "./isColorValid";
 
 /**
  * Get the alpha value for a color.
@@ -7,6 +8,7 @@ import Color from "./Color";
  * @returns the alpha value, or undefined color has no alpha
  */
 export function getAlpha(color: Color): number | undefined {
+  if (!isColorValid(color)) throw "Invalid Color";
   if (typeof color.rgb.a === "undefined") {
     return undefined;
   }
