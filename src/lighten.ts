@@ -1,5 +1,6 @@
 import { HSLColor } from "./types";
 import { Color } from "./Color";
+import { isColorValid } from "./isColorValid";
 
 /**
  * Lighten a color by the specified amount.
@@ -9,6 +10,7 @@ import { Color } from "./Color";
  * @returns the new lightened color
  */
 export function lighten(color: Color, amount: number): Color {
+  if (!isColorValid(color)) throw "Invalid Color";
   const asHSL: HSLColor = { ...color.hsl };
   asHSL.l += amount / 100;
   // can't be more than 1 luminance

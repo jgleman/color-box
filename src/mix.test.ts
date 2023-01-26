@@ -235,6 +235,30 @@ test("mix #91e16f33 and  #0144bfb3 both weights, mixed lastwards => #1d63af7d", 
   expect(hexString(mix(color1, color2, 42))).toBe("#1d63af7d");
 });
 
+test("mix color1 is not valid, result should be error", () => {
+  const color1 = new Color("#hsl");
+  const color2 = new Color("#ADADAD");
+  expect(() => {
+    expect(mix(color1, color2));
+  }).toThrow("Invalid Color");
+});
+
+test("mix color2 is not valid, result should be error", () => {
+  const color1 = new Color("#ADADAD");
+  const color2 = new Color("#hsl");
+  expect(() => {
+    expect(mix(color1, color2));
+  }).toThrow("Invalid Color");
+});
+
+test("mix color2 is missing, result should be error", () => {
+  const color1 = new Color("#ADADAD");
+  expect(() => {
+    //@ts-ignore
+    expect(mix(color1));
+  }).toThrow("Invalid Color");
+});
+
 // Some sass features/functionality I may not support (namely, keyword transparent)
 // such as keyword transparent
 
