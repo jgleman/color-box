@@ -11,6 +11,6 @@ import { getRgb } from "./getRgb";
  * * raw. Raw is the internal color object values, with no rounding
  * @returns the red value of the color
  */
-export function getBlie(color: Color, mode: string = "decimal"): number {
+export function getBlue(color: Color, mode: string = "decimal"): number {
   return getRgb(color, mode).b;
 }
