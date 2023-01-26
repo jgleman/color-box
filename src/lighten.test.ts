@@ -24,3 +24,10 @@ test("lighten #ff0000 14% = #ff4747", () => {
 test("lighten #ff0000 0.5% = #ff0303", () => {
   expect(hexString(lighten(color, 0.5))).toBe("#ff0303");
 });
+
+test("lighten, color is missing, result should be error", () => {
+  expect(() => {
+    //@ts-ignore
+    expect(lighten());
+  }).toThrow("Invalid Color");
+});

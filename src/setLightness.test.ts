@@ -54,3 +54,10 @@ test("set lightness of 101 should thow an error", () => {
     hexString(setLightness(color, 101));
   }).toThrow("Lightness must be between 0.0 and 1.0 or 0 and 100");
 });
+
+test("setLightness, color is missing, result should be error", () => {
+  expect(() => {
+    //@ts-ignore
+    expect(setLightness());
+  }).toThrow("Invalid Color");
+});

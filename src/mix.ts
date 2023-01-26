@@ -1,6 +1,6 @@
 import Color from "./Color";
 import { RGBColor } from "./types";
-
+import { isColorValid } from "./isColorValid";
 /**
  * Implementation to the Sass mix function. Returns a color that’s a mixture of
  * color1 and color2. Both the weight and the relative opacity of each color
@@ -12,6 +12,8 @@ import { RGBColor } from "./types";
  * @returns the mixed color
  */
 export function mix(color1: Color, color2: Color, weight: number = 50): Color {
+  if (!isColorValid(color1)) throw "Invalid Color (color1)";
+  if (!isColorValid(color2)) throw "Invalid Color (color2)";
   // Description of the SASS mix algorithm
   // https://github.com/sass/sass/blob/main/spec/built-in-modules/color.md#mix
   // Dart Implementation of SASS mix

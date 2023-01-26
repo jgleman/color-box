@@ -26,3 +26,10 @@ test("getAlpha of 336699", () => {
   const color = new Color("#336699");
   expect(getAlpha(color)).toBe(undefined);
 });
+
+test("getAlpha, color is missing, result should be error", () => {
+  expect(() => {
+    //@ts-ignore
+    expect(getAlpha());
+  }).toThrow("Invalid Color");
+});

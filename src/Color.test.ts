@@ -7,6 +7,21 @@ test("test that #336699 creates a color with hex value 336699", () => {
   expect(color.hex).toBe("336699");
 });
 
+test("test that #369 creates a color with hex value 369", () => {
+  const color = new Color("#369");
+  expect(color.hex).toBe("369");
+});
+
+test("test that #369 creates a color with hex value { r: 51, g: 102, b: 153 }", () => {
+  const color = new Color("#369");
+  expect(color.rgb).toEqual({ r: 51, g: 102, b: 153 });
+});
+
+test("test that #369F creates a color with hex value { r: 51, g: 102, b: 153, a: 1 }", () => {
+  const color = new Color("#369F");
+  expect(color.rgb).toEqual({ r: 51, g: 102, b: 153, a: 1 });
+});
+
 test("test that 336699 creates a color with hex value 336699", () => {
   const color = new Color("336699");
   expect(color.hex).toBe("336699");

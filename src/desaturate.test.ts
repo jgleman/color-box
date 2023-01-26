@@ -22,3 +22,10 @@ test("desaturate #dda0dd by 14% = #dda0dd", () => {
   const color = new Color("#dda0dd");
   expect(hexString(desaturate(color, 14))).toBe("#d4a9d4");
 });
+
+test("desaturate, color is missing, result should be error", () => {
+  expect(() => {
+    //@ts-ignore
+    expect(desaturate());
+  }).toThrow("Invalid Color");
+});

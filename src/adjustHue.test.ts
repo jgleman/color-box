@@ -36,3 +36,16 @@ test("adjust hue of 336699 by add 540, result should be error", () => {
     hexString(adjustHue(color, 540));
   }).toThrow("Amount must be between -360 and 360");
 });
+
+test("color is not valid, result should be error", () => {
+  const color = new Color("");
+  expect(() => {
+    hexString(adjustHue(color, 540));
+  }).toThrow("Invalid Color");
+});
+test("color is not valid, result should be error", () => {
+  expect(() => {
+    // @ts-ignore
+    hexString(adjustHue());
+  }).toThrow("Invalid Color");
+});

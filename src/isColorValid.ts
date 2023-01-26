@@ -6,6 +6,7 @@ import Color from "./Color";
  * for colors with alpha channel
  */
 export function isColorValid(color: Color): Boolean {
+  if (typeof color === "undefined") return false;
   return color.hex?.match(/^([a-fA-F0-9]{6})([a-fA-F0-9]{2})?$/g)
     ? true
     : false || false;

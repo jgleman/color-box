@@ -1,5 +1,6 @@
 import { HSLColor } from "./types";
 import { Color } from "./Color";
+import { isColorValid } from "./isColorValid";
 
 /**
  * Makes the provided color less saturated by the specified amount.
@@ -9,6 +10,7 @@ import { Color } from "./Color";
  * @returns the new desaturated color
  */
 export function desaturate(color: Color, amount: number): Color {
+  if (!isColorValid(color)) throw "Invalid Color";
   const asHSL: HSLColor = { ...color.hsl };
   asHSL.s -= amount / 100;
   // can't be less than 0 saturation

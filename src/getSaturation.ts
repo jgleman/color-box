@@ -1,5 +1,5 @@
 import Color from "./Color";
-
+import { isColorValid } from "./isColorValid";
 /**
  * Get the saturation value for a color.
  *
@@ -7,5 +7,6 @@ import Color from "./Color";
  * @returns the saturation value
  */
 export function getSaturation(color: Color): number {
+  if (!isColorValid(color)) throw "Invalid Color";
   return color.hsl.s;
 }

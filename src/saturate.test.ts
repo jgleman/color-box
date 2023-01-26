@@ -22,3 +22,10 @@ test("saturate #dda0dd by 14% = #e697e6", () => {
   const color = new Color("#dda0dd");
   expect(hexString(saturate(color, 14))).toBe("#e697e6");
 });
+
+test("saturate, color is missing, result should be error", () => {
+  expect(() => {
+    //@ts-ignore
+    expect(saturate());
+  }).toThrow("Invalid Color");
+});

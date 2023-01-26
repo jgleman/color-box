@@ -49,3 +49,10 @@ test("set saturation of 50 should return #bf4040", () => {
   const color = new Color("#ff0000");
   expect(hexString(setSaturation(color, 50))).toBe("#bf4040");
 });
+
+test("setSaturation, color is missing, result should be error", () => {
+  expect(() => {
+    //@ts-ignore
+    expect(setSaturation());
+  }).toThrow("Invalid Color");
+});

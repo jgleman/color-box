@@ -10,14 +10,24 @@ function round2(n: number): number {
 
 export function hexToRGB(hexColor: string): RGBColor {
   const rgbParts: RGBColor = { r: 0, g: 0, b: 0, a: undefined };
+
+  // if we have a 3 character or 4 character color, double each character
+  const hexColorFull =
+    hexColor.length === 3 || hexColor.length === 4
+      ? hexColor
+          .split("")
+          .map((i) => i.concat(i))
+          .join("")
+      : hexColor;
+
   const rawAlpha =
-    hexColor.length === 8
-      ? bind(parseInt(hexColor.substring(6, 8), 16), 255)
+    hexColorFull.length === 8
+      ? bind(parseInt(hexColorFull.substring(6, 8), 16), 255)
       : "undefined";
 
-  rgbParts.r = parseInt(hexColor.substring(0, 2), 16);
-  rgbParts.g = parseInt(hexColor.substring(2, 4), 16);
-  rgbParts.b = parseInt(hexColor.substring(4, 6), 16);
+  rgbParts.r = parseInt(hexColorFull.substring(0, 2), 16);
+  rgbParts.g = parseInt(hexColorFull.substring(2, 4), 16);
+  rgbParts.b = parseInt(hexColorFull.substring(4, 6), 16);
   rgbParts.a = typeof rawAlpha === "number" ? round2(rawAlpha) : undefined;
 
   return rgbParts;
