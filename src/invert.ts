@@ -4,7 +4,7 @@ import { isColorValid } from "./isColorValid";
 
 /**
  *
- * @returns the inverse color of the given color.
+ * @returns the negative color of the given color.
  */
 export function invert(color: Color): Color {
   if (!isColorValid(color)) throw "Invalid Color";
