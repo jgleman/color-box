@@ -9,7 +9,7 @@ import { isColorValid } from "./isColorValid";
  * @returns a new color with the new hue value
  */
 export function setHue(color: Color, hue: number): Color {
-  if (!isColorValid(color)) throw "Invalid Color";
+  if (!isColorValid(color)) throw new Error("Invalid Color");
   if (hue < 0 || hue > 360) {
     throw new Error("Amount must be between 0 and 360");
   }

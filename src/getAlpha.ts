@@ -8,7 +8,7 @@ import { isColorValid } from "./isColorValid";
  * @returns the alpha value, or undefined color has no alpha
  */
 export function getAlpha(color: Color): number | undefined {
-  if (!isColorValid(color)) throw "Invalid Color";
+  if (!isColorValid(color)) throw new Error("Invalid Color");
   if (typeof color.rgb.a === "undefined") {
     return undefined;
   }

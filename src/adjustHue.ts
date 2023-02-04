@@ -10,7 +10,7 @@ import { isColorValid } from "./isColorValid";
  * @returns the adjusted color
  */
 export function adjustHue(color: Color, amount: number): Color {
-  if (!isColorValid(color)) throw "Invalid Color";
+  if (!isColorValid(color)) throw new Error("Invalid Color");
 
   if (amount < -360 || amount > 360) {
     throw new Error("Amount must be between -360 and 360");

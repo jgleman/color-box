@@ -8,7 +8,7 @@ import { isColorValid } from "./isColorValid";
  * @returns the new gray color
  */
 export function grayscale(color: Color): Color {
-  if (!isColorValid(color)) throw "Invalid Color";
+  if (!isColorValid(color)) throw new Error("Invalid Color");
   const asHSL: HSLColor = { ...color.hsl };
   asHSL.s = 0;
   return new Color(asHSL);

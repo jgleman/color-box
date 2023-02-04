@@ -14,7 +14,7 @@ import { isColorValid } from "./isColorValid";
  */
 
 export function setLightness(color: Color, lightness: number | string): Color {
-  if (!isColorValid(color)) throw "Invalid Color";
+  if (!isColorValid(color)) throw new Error("Invalid Color");
   const validate =
     typeof lightness === "string" ? parseFloat(lightness) : lightness;
   if (isNaN(validate) || validate < 0 || validate > 100) {

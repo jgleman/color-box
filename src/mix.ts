@@ -1,19 +1,26 @@
 import Color from "./Color";
 import { RGBColor } from "./types";
 import { isColorValid } from "./isColorValid";
+
 /**
+ * Mix two colors together by a specified weight
+ *
  * Implementation to the Sass mix function. Returns a color that’s a mixture of
  * color1 and color2. Both the weight and the relative opacity of each color
  * determines how much of each color is in the result.
  *
- * @param color1
- * @param color2
- * @param [weight=50]  The weight must be a number between 0 and 100 (inclusive) representing a percentage. A larger weight indicates that more of color1 should be used, and a smaller weight indicates that more of color2 should be used.
- * @returns the mixed color
+ * @param color1 - The first color to be mixed
+ * @param color2 - The second color to be mixed
+ * @param weight - The weight to mix the colors by (0-100). Default is 50
+ * @returns The mixed color
+ *
+ * @throws Invalid Color (color1) if the first color parameter is not a valid color
+ * @throws Invalid Color (color2) if the second color parameter is not a valid color
  */
+
 export function mix(color1: Color, color2: Color, weight: number = 50): Color {
-  if (!isColorValid(color1)) throw "Invalid Color (color1)";
-  if (!isColorValid(color2)) throw "Invalid Color (color2)";
+  if (!isColorValid(color1)) throw new Error("Invalid Color (color1)");
+  if (!isColorValid(color2)) throw new Error("Invalid Color (color2)");
   // Description of the SASS mix algorithm
   // https://github.com/sass/sass/blob/main/spec/built-in-modules/color.md#mix
   // Dart Implementation of SASS mix
