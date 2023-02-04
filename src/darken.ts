@@ -10,7 +10,7 @@ import { isColorValid } from "./isColorValid";
  * @returns the new darkened color
  */
 export function darken(color: Color, amount: number): Color {
-  if (!isColorValid(color)) throw "Invalid Color";
+  if (!isColorValid(color)) throw new Error("Invalid Color");
   const asHSL: HSLColor = { ...color.hsl };
   asHSL.l -= amount / 100;
   // can't be less than 0 luminance

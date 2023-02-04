@@ -4,13 +4,19 @@ import { isColorValid } from "./isColorValid";
 import { relativeLuminence } from "./relativeLuminence";
 
 /**
+ * The `contrast` function calculates the contrast ratio between two colors.
  * Implementation of http://www.w3.org/TR/WCAG20/#contrast-ratiodef
  *
- * @returns The contrast ratio of the two provided colors in the format   n:1
+ * @param {Color} color1 - The first color to compare.
+ * @param {Color} color2 - The second color to compare.
+ * @return {string} - The contrast ratio between two colors in the format of "X.X:1".
+ *
+ * @throws {Error} - Throws an error if either of the color arguments is invalid.
  */
+
 export function contrast(color1: Color, color2: Color): string {
-  if (!isColorValid(color1)) throw "Invalid Color (color1)";
-  if (!isColorValid(color2)) throw "Invalid Color (color2)";
+  if (!isColorValid(color1)) throw new Error("Invalid Color (color1)");
+  if (!isColorValid(color2)) throw new Error("Invalid Color (color2)");
   let lum1 = relativeLuminence(color1);
   let lum2 = relativeLuminence(color2);
 

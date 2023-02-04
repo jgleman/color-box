@@ -7,7 +7,7 @@ import { isColorValid } from "./isColorValid";
  * @returns the negative color of the given color.
  */
 export function invert(color: Color): Color {
-  if (!isColorValid(color)) throw "Invalid Color";
+  if (!isColorValid(color)) throw new Error("Invalid Color");
   const asRGB: RGBColor = { ...color.rgb };
   asRGB.r = 255 - color.rgb.r;
   asRGB.g = 255 - color.rgb.g;

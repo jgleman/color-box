@@ -9,7 +9,7 @@ import { isColorValid } from "./isColorValid";
  * @returns the new saturated color
  */
 export function saturate(color: Color, amount: number): Color {
-  if (!isColorValid(color)) throw "Invalid Color";
+  if (!isColorValid(color)) throw new Error("Invalid Color");
   const asHSL: HSLColor = { ...color.hsl };
   asHSL.s += amount / 100;
   // can't be greater than 1 saturation

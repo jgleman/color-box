@@ -22,7 +22,7 @@ export function setHsl(
   color: Color,
   hsl: { h?: number | string; s?: number | string; l?: number | string }
 ): Color {
-  if (!isColorValid(color)) throw "Invalid Color";
+  if (!isColorValid(color)) throw new Error("Invalid Color");
   const { h, s, l } = hsl || { h: undefined, s: undefined, l: undefined };
   const asHSL: HSLColor = { ...color.hsl };
   if (typeof h !== "undefined") {

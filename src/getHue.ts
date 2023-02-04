@@ -8,6 +8,6 @@ import { isColorValid } from "./isColorValid";
  * @returns the hue value
  */
 export function getHue(color: Color): number {
-  if (!isColorValid(color)) throw "Invalid Color";
+  if (!isColorValid(color)) throw new Error("Invalid Color");
   return color.hsl.h;
 }

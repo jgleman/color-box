@@ -15,7 +15,7 @@ export function getRgb(
   color: Color,
   mode: string = "decimal"
 ): { r: number; g: number; b: number } {
-  if (!isColorValid(color)) throw "Invalid Color";
+  if (!isColorValid(color)) throw new Error("Invalid Color");
 
   const rgb = color.rgb;
   switch (mode) {
