@@ -1,4 +1,4 @@
-import { RGBColor, HSLColor } from "../types";
+import { RGBColor, HSLColor } from "../types.js";
 
 // Adapted from https://en.wikipedia.org/wiki/HSL_and_HSV#From_RGB
 export function rgbToHSL(rgbColor: RGBColor): HSLColor {

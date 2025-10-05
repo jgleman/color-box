@@ -1,6 +1,6 @@
 import { expect, test } from "@jest/globals";
-import { Color } from "./Color";
-import { getRgb } from "./getRgb";
+import { Color } from "./Color.js";
+import { getRgb } from "./getRgb.js";
 
 test("getRgb of #000000 to equal {r: 0, g: 0, b: 0}", () => {
   const color = new Color("#000000");
@@ -52,7 +52,7 @@ test("getRgb of hsl(123, 45, 60) as raw to equal { b: 111.68999999999997, g: 198
 
 test("getRgb passing no color, result should be error", () => {
   expect(() => {
-    // @ts-ignore
+    //@ts-expect-error expects one or two arguments
     getRgb();
   }).toThrow("Invalid Color");
 });

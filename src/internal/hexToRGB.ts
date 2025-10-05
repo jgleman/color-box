@@ -1,5 +1,5 @@
-import { RGBColor } from "../types";
-import { bind } from "./bind";
+import { RGBColor } from "../types.js";
+import { bind } from "./bind.js";
 
 function round2(n: number): number {
   // aped from https://stackoverflow.com/a/32605063

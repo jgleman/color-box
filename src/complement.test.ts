@@ -1,7 +1,7 @@
 import { expect, test } from "@jest/globals";
-import { Color } from "./Color";
-import { complement } from "./complement";
-import { hexString } from "./hexString";
+import { Color } from "./Color.js";
+import { complement } from "./complement.js";
+import { hexString } from "./hexString.js";
 
 test("complement of #ff0000 = #00ffff", () => {
   const color = new Color("#ff0000");

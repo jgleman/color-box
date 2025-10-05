@@ -1,7 +1,7 @@
 import { expect, test } from "@jest/globals";
-import { Color } from "./Color";
-import { darken } from "./darken";
-import { hexString } from "./hexString";
+import { Color } from "./Color.js";
+import { darken } from "./darken.js";
+import { hexString } from "./hexString.js";
 
 const color = new Color("#ff0000");
 
@@ -27,7 +27,7 @@ test("darken #ff0000 0.5% = #fc0000", () => {
 
 test("darken, color is missing, result should be error", () => {
   expect(() => {
-    //@ts-ignore
+    //@ts-expect-error expects two arguments
     expect(darken());
   }).toThrow("Invalid Color");
 });

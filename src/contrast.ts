@@ -1,7 +1,7 @@
-import Color from "./Color";
-import { isColorValid } from "./isColorValid";
+import Color from "./Color.js";
+import { isColorValid } from "./isColorValid.js";
 
-import { relativeLuminence } from "./relativeLuminence";
+import { relativeLuminence } from "./relativeLuminence.js";
 
 /**
  * The `contrast` function calculates the contrast ratio between two colors.

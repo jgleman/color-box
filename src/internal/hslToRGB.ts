@@ -1,4 +1,4 @@
-import { RGBColor, HSLColor } from "../types";
+import { RGBColor, HSLColor } from "../types.js";
 
 // algorithm adapted from
 // https://en.wikipedia.org/wiki/HSL_and_HSV#From_RGB

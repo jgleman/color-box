@@ -1,5 +1,5 @@
-import Color from "./Color";
-import { isColorValid } from "./isColorValid";
+import Color from "./Color.js";
+import { isColorValid } from "./isColorValid.js";
 
 /**
  * @returns The a string of the HSL representation of a color, e.g. hsl(210 50% 40%)

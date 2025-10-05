@@ -1,7 +1,7 @@
-import Color from "./Color";
-import { RGBColor } from "./types";
-import { handlePercentInput } from "./internal/handlePercentInput";
-import { isColorValid } from "./isColorValid";
+import Color from "./Color.js";
+import { RGBColor } from "./types.js";
+import { handlePercentInput } from "./internal/handlePercentInput.js";
+import { isColorValid } from "./isColorValid.js";
 /**
  * Set the alpha value for a color to a specific value.
  *

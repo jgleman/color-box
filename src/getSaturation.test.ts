@@ -1,6 +1,6 @@
 import { expect, test } from "@jest/globals";
-import { Color } from "./Color";
-import { getSaturation } from "./getSaturation";
+import { Color } from "./Color.js";
+import { getSaturation } from "./getSaturation.js";
 
 test("getSaturation of 336699", () => {
   const color = new Color("#336699");
@@ -10,7 +10,7 @@ test("getSaturation of 336699", () => {
 
 test("getSaturation, color is missing, result should be error", () => {
   expect(() => {
-    //@ts-ignore
+    //@ts-expect-error expects two arguments
     expect(getSaturation());
   }).toThrow("Invalid Color");
 });

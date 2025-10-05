@@ -1,6 +1,6 @@
-import Color from "./Color";
-import { RGBColor } from "./types";
-import { isColorValid } from "./isColorValid";
+import Color from "./Color.js";
+import { RGBColor } from "./types.js";
+import { isColorValid } from "./isColorValid.js";
 
 /**
  * Mix two colors together by a specified weight

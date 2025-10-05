@@ -1,6 +1,6 @@
 import { expect, test } from "@jest/globals";
-import { Color } from "./Color";
-import { hexString } from "./hexString";
+import { Color } from "./Color.js";
+import { hexString } from "./hexString.js";
 
 test("hex string of 336699 is #336699", () => {
   const color = new Color("336699");

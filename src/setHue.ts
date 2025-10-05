@@ -1,6 +1,6 @@
-import Color from "./Color";
-import { HSLColor } from "./types";
-import { isColorValid } from "./isColorValid";
+import Color from "./Color.js";
+import { HSLColor } from "./types.js";
+import { isColorValid } from "./isColorValid.js";
 /**
  * Set the hue value for a color to a specific value.
  *

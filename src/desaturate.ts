@@ -1,6 +1,6 @@
-import { HSLColor } from "./types";
-import { Color } from "./Color";
-import { isColorValid } from "./isColorValid";
+import { HSLColor } from "./types.js";
+import { Color } from "./Color.js";
+import { isColorValid } from "./isColorValid.js";
 
 /**
  * Makes the provided color less saturated by the specified amount.

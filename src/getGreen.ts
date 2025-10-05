@@ -1,5 +1,5 @@
-import Color from "./Color";
-import { getRgb } from "./getRgb";
+import Color from "./Color.js";
+import { getRgb } from "./getRgb.js";
 
 /**
  * Get the Green value for a color.

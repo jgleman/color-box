@@ -1,5 +1,5 @@
 import { expect, test } from "@jest/globals";
-import { Color } from "./Color";
+import { Color } from "./Color.js";
 //
 
 test("test that #336699 creates a color with hex value 336699", () => {

@@ -1,5 +1,5 @@
-import { RGBColor } from "../types";
-import { parsePercentage } from "./parsePercentage";
+import { RGBColor } from "../types.js";
+import { parsePercentage } from "./parsePercentage.js";
 
 function parseColorComponent(component: string) {
   if (component.includes("%")) {

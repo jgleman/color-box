@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es2015",
+    "target": "es2020",
     "lib": ["es2021"],
     "strict": true,
     "module": "es2022",
@@ -15,11 +15,10 @@
     "importHelpers": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "allowJs": true,
     "skipLibCheck": true,
-    "outDir": "dist/esm",
     "declaration": true,
-    "declarationDir": "dist/types"
+    "declarationDir": "dist/types",
+    "outDir": "dist/esm"
   },
   "include": ["src"],
   "exclude": ["node_modules", "dist"]

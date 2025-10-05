@@ -1,11 +1,19 @@
 {
   "name": "@jgleman/color-box",
-  "type": "module",
   "version": "1.0.0",
   "description": "Another JavaScript/TypeScript Color Utility Library",
+  "type": "module",
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",
-  "types": "dist/index.d.cts",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "sideEffects": false,
   "scripts": {
     "clean:dist": "rimraf dist",
     "test": "jest",
@@ -41,6 +49,7 @@
     "@typescript-eslint/parser": "^8.45.0",
     "eslint": "^9.37.0",
     "eslint-config-prettier": "^10.1.8",
+    "eslint-import-resolver-typescript": "^4.4.4",
     "eslint-plugin-import": "^2.32.0",
     "jest": "^30.2.0",
     "pkgroll": "^2.17.0",

@@ -1,7 +1,7 @@
 import { expect, test } from "@jest/globals";
-import { Color } from "./Color";
-import { setHue } from "./setHue";
-import { hexString } from "./hexString";
+import { Color } from "./Color.js";
+import { setHue } from "./setHue.js";
+import { hexString } from "./hexString.js";
 
 test("set hue of 100 should return #559933", () => {
   const color = new Color("#336699");
@@ -17,7 +17,7 @@ test("set hue of 361 should thow an error", () => {
 
 test("setHue, color is missing, result should be error", () => {
   expect(() => {
-    //@ts-ignore
+    //@ts-expect-error expects two arguments
     expect(setHue());
   }).toThrow("Invalid Color");
 });

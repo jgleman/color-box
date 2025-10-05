@@ -1,4 +1,4 @@
-import Color from "./Color";
+import Color from "./Color.js";
 
 const REGEX =
   /^(([a-fA-F0-9]{6})([a-fA-F0-9]{2})?)|(([a-fA-F0-9]{3})([a-fA-F0-9]{1})?)$/g;
@@ -12,5 +12,5 @@ export function isColorValid(color: Color): boolean {
   if (typeof color === "undefined") return false;
 
   // string can be 3 or 4 or 6 or 8 in length
-  return color.hex?.match(REGEX) ? true : false || false;
+  return !!color.hex?.match(REGEX);
 }

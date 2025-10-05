@@ -1,7 +1,7 @@
-import Color from "./Color";
-import { HSLColor } from "./types";
-import { isColorValid } from "./isColorValid";
-import { handlePercentInput } from "./internal/handlePercentInput";
+import Color from "./Color.js";
+import { HSLColor } from "./types.js";
+import { isColorValid } from "./isColorValid.js";
+import { handlePercentInput } from "./internal/handlePercentInput.js";
 
 /**
  * Set the HSL values for a color to a specific values.

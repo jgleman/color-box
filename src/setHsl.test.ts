@@ -1,7 +1,7 @@
 import { expect, test } from "@jest/globals";
-import { Color } from "./Color";
-import { setHsl } from "./setHsl";
-import { hexString } from "./hexString";
+import { Color } from "./Color.js";
+import { setHsl } from "./setHsl.js";
+import { hexString } from "./hexString.js";
 
 test("set hue of 100 should return #559933", () => {
   const color = new Color("#336699");
@@ -17,20 +17,19 @@ test("set hue of 361 should thow an error", () => {
 
 test("set hsl missing object should return #336699", () => {
   const color = new Color("#336699");
-  //@ts-ignore
+  //@ts-expect-error missing second argument
   expect(hexString(setHsl(color))).toBe("#336699");
 });
 
-test("set hsl missing color should thow an error", () => {
+test("set hsl missing color should thow an error", () =>
   expect(() => {
-    //@ts-ignore
+    //@ts-expect-error missing arguments
     setHsl();
-  }).toThrow("Invalid Color");
-});
+  }).toThrow("Invalid Color"));
 
 test("set hsl undefined color should thow an error", () => {
   expect(() => {
-    //@ts-ignore
+    //@ts-expect-error undefined is not a Color
     setHsl(undefined, {});
   }).toThrow("Invalid Color");
 });
@@ -38,7 +37,6 @@ test("set hsl undefined color should thow an error", () => {
 test("set hsl invalid color should thow an error", () => {
   const color = new Color("#hsl");
   expect(() => {
-    //@ts-ignore
     setHsl(color, {});
   }).toThrow("Invalid Color");
 });

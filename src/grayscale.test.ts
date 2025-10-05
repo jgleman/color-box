@@ -1,7 +1,7 @@
 import { expect, test } from "@jest/globals";
-import { Color } from "./Color";
-import { grayscale } from "./grayscale";
-import { hexString } from "./hexString";
+import { Color } from "./Color.js";
+import { grayscale } from "./grayscale.js";
+import { hexString } from "./hexString.js";
 
 test("grayscale of 336699", () => {
   const color = new Color("#336699");
@@ -11,7 +11,7 @@ test("grayscale of 336699", () => {
 
 test("grayscale, color is missing, result should be error", () => {
   expect(() => {
-    //@ts-ignore
+    //@ts-expect-error expects one argument
     expect(grayscale());
   }).toThrow("Invalid Color");
 });

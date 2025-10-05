@@ -1,7 +1,7 @@
 import { expect, test } from "@jest/globals";
-import { Color } from "./Color";
-import { lighten } from "./lighten";
-import { hexString } from "./hexString";
+import { Color } from "./Color.js";
+import { lighten } from "./lighten.js";
+import { hexString } from "./hexString.js";
 
 const color = new Color("#ff0000");
 
@@ -27,7 +27,7 @@ test("lighten #ff0000 0.5% = #ff0303", () => {
 
 test("lighten, color is missing, result should be error", () => {
   expect(() => {
-    //@ts-ignore
+    //@ts-expect-error expects two arguments
     expect(lighten());
   }).toThrow("Invalid Color");
 });
