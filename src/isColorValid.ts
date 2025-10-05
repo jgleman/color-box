@@ -8,7 +8,7 @@ const REGEX =
  * a valid 6 digit hexadecimal number or a valid 8 digit hexadecimal number
  * for colors with alpha channel
  */
-export function isColorValid(color: Color): Boolean {
+export function isColorValid(color: Color): boolean {
   if (typeof color === "undefined") return false;
 
   // string can be 3 or 4 or 6 or 8 in length
