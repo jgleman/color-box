@@ -21,10 +21,6 @@ export default [
         ecmaVersion: "latest",
         sourceType: "module",
       },
-      globals: {
-        window: "readonly",
-        document: "readonly",
-      },
     },
 
     plugins: {
