@@ -21,7 +21,6 @@ export function adjustHue(color: Color, amount: number): Color {
 
   if (asHSL.h > 360) asHSL.h -= 360;
   if (asHSL.h < 0) asHSL.h = 360 - Math.abs(asHSL.h);
-  //if (asHSL.h < -360) asHSL.h += 360;
 
   return new Color(asHSL);
 }

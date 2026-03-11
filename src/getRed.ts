@@ -11,6 +11,6 @@ import { getRgb } from "./getRgb.js";
  * * raw. Raw is the internal color object values, with no rounding
  * @returns the red value of the color
  */
-export function getRed(color: Color, mode: string = "decimal"): number {
+export function getRed(color: Color, mode: "decimal" | "percentage" | "raw" = "decimal"): number {
   return getRgb(color, mode).r;
 }

@@ -13,7 +13,7 @@ import { isColorValid } from "./isColorValid.js";
  */
 export function getRgb(
   color: Color,
-  mode: string = "decimal"
+  mode: "decimal" | "percentage" | "raw" = "decimal"
 ): { r: number; g: number; b: number } {
   if (!isColorValid(color)) throw new Error("Invalid Color");
 
