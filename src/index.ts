@@ -19,7 +19,7 @@ export * from "./invert.js";
 export * from "./isColorValid.js";
 export * from "./lighten.js";
 export * from "./mix.js";
-export * from "./relativeLuminence.js";
+export * from "./relativeLuminance.js";
 export * from "./rgbString.js";
 export * from "./saturate.js";
 export * from "./setAlpha.js";

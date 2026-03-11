@@ -5,7 +5,7 @@ import { isColorValid } from "./isColorValid.js";
  *
  * @returns The the relative luminance
  */
-export function relativeLuminence(color: Color): number {
+export function relativeLuminance(color: Color): number {
   if (!isColorValid(color)) throw new Error("Invalid Color");
   const r = color.rgb.r / 255;
   const g = color.rgb.g / 255;
