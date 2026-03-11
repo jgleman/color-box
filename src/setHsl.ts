@@ -20,17 +20,20 @@ import { handlePercentInput } from "./internal/handlePercentInput.js";
 
 export function setHsl(
   color: Color,
-  hsl: { h?: number | string; s?: number | string; l?: number | string }
+  hsl: { h?: number | string; s?: number | string; l?: number | string },
 ): Color {
   if (!isColorValid(color)) throw new Error("Invalid Color");
   const { h, s, l } = hsl || { h: undefined, s: undefined, l: undefined };
   const asHSL: HSLColor = { ...color.hsl };
+
   if (typeof h !== "undefined") {
-    if (h < 0 || h > 360) {
+    const vh = typeof h === "string" ? parseFloat(h) : h;
+    if (isNaN(vh) || vh < 0 || vh > 360) {
       throw new Error("Hue must be between 0 and 360");
     }
-    asHSL.h = typeof h === "string" ? parseInt(h, 10) : h;
+    asHSL.h = vh;
   }
+
   if (typeof l !== "undefined") {
     const vl = typeof l === "string" ? parseFloat(l) : l;
     if (isNaN(vl) || vl < 0 || vl > 100) {
