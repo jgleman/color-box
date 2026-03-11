@@ -52,6 +52,22 @@ export default [
       },
     },
   },
-
+  {
+    files: ["**/*.test.ts", "**/*.spec.ts"],
+    plugins: {
+      import: importPlugin,
+      "@typescript-eslint": tsPlugin,
+    },
+    rules: {
+      "import/extensions": "off",
+    },
+    settings: {
+      "import/resolver": {
+        node: {
+          extensions: [".ts", ".js"],
+        },
+      },
+    },
+  },
   prettier,
 ];
