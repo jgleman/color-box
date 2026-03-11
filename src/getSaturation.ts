@@ -1,4 +1,4 @@
-import Color from "./Color.js";
+import { Color } from "./Color.js";
 import { isColorValid } from "./isColorValid.js";
 /**
  * Get the saturation value for a color.

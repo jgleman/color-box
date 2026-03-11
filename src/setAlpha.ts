@@ -1,4 +1,4 @@
-import Color from "./Color.js";
+import { Color } from "./Color.js";
 import { RGBColor } from "./types.js";
 import { handlePercentInput } from "./internal/handlePercentInput.js";
 import { isColorValid } from "./isColorValid.js";

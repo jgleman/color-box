@@ -1,4 +1,4 @@
-import Color from "./Color.js";
+import { Color } from "./Color.js";
 
 const REGEX =
   /^(([a-fA-F0-9]{6})([a-fA-F0-9]{2})?)|(([a-fA-F0-9]{3})([a-fA-F0-9]{1})?)$/;

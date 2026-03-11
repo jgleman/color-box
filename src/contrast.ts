@@ -1,4 +1,4 @@
-import Color from "./Color.js";
+import { Color } from "./Color.js";
 import { isColorValid } from "./isColorValid.js";
 
 import { relativeLuminance } from "./relativeLuminance.js";

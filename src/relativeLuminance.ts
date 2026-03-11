@@ -1,4 +1,4 @@
-import Color from "./Color.js";
+import { Color } from "./Color.js";
 import { isColorValid } from "./isColorValid.js";
 /**
  * Implementation of http://www.w3.org/TR/WCAG20/#relativeluminancedef
