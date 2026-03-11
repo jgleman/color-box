@@ -76,9 +76,9 @@ test("set lightness of 1 should return #010304", () => {
   expect(hexString(setHsl(color, { l: 1.0 }))).toBe("#010304");
 });
 
-test("set lightness of 1.0 (string) should return #FFFFFF", () => {
+test("set lightness of 100% (string) should return #FFFFFF", () => {
   const color = new Color("#336699");
-  expect(hexString(setHsl(color, { l: "1.0" }))).toBe("#ffffff");
+  expect(hexString(setHsl(color, { l: "100%" }))).toBe("#ffffff");
 });
 
 test("set lightness of 0 should return #000000", () => {
@@ -125,9 +125,9 @@ test("set saturation of 1 should return #656667", () => {
   expect(hexString(setHsl(color, { s: 1.0 }))).toBe("#656667");
 });
 
-test("set saturation of 1.0 (string) should return #0066CC", () => {
+test("set saturation of 100% (string) should return #0066CC", () => {
   const color = new Color("#336699");
-  expect(hexString(setHsl(color, { s: "1.0" }))).toBe("#0066cc");
+  expect(hexString(setHsl(color, { s: "100%" }))).toBe("#0066cc");
 });
 
 test("set saturation of .5 should return #bf4040", () => {

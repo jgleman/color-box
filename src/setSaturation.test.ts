@@ -35,9 +35,9 @@ test("set saturation of 1 should return #656667", () => {
   expect(hexString(setSaturation(color, 1.0))).toBe("#656667");
 });
 
-test("set saturation of 1.0 (string) should return #0066CC", () => {
+test("set saturation of 100% (string) should return #0066CC", () => {
   const color = new Color("#336699");
-  expect(hexString(setSaturation(color, "1.0"))).toBe("#0066cc");
+  expect(hexString(setSaturation(color, "100%"))).toBe("#0066cc");
 });
 
 test("set saturation of .5 should return #bf4040", () => {

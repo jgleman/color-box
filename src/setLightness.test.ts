@@ -38,9 +38,9 @@ test("set lightness of 1 should return #010304", () => {
   expect(hexString(setLightness(color, 1.0))).toBe("#010304");
 });
 
-test("set lightness of 1.0 (string) should return #FFFFFF", () => {
+test("set lightness of 100% (string) should return #FFFFFF", () => {
   const color = new Color("#336699");
-  expect(hexString(setLightness(color, "1.0"))).toBe("#ffffff");
+  expect(hexString(setLightness(color, "100%"))).toBe("#ffffff");
 });
 
 test("set lightness of 0 should return #000000", () => {
