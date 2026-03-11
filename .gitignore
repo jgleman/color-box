@@ -6,7 +6,18 @@ npm-debug.log*
 node_modules
 dist
 coverage
-docs
+docs/.vitepress/dist
+docs/.vitepress/cache
+docs/api
+
+# AI agent directories
+.claude
+.cursor
+.aider
+.codeium
+.copilot
+.continue
+.windsurf
 
 # Editor directories and files
 .vscode/*

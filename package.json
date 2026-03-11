@@ -14,14 +14,21 @@
     }
   },
   "sideEffects": false,
-  "files": ["dist"],
-  "engines": { "node": ">=20" },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
     "clean:dist": "rimraf dist",
     "test": "jest",
     "build": "npm run clean:dist && npm run test && pkgroll --target-es2020 --minify",
     "watch": "pkgroll --watch --target-es2020 --minify",
-    "docs": "typedoc --out docs src/index.ts"
+    "docs:generate": "typedoc",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "typedoc && vitepress build docs",
+    "docs:preview": "vitepress preview docs"
   },
   "repository": {
     "type": "git",
@@ -58,7 +65,9 @@
     "ts-jest": "^29.4.4",
     "ts-node": "^10.9.2",
     "tslib": "^2.8.1",
-    "typedoc": "^0.28.13",
-    "typescript": "^5.9.3"
+    "typedoc": "^0.28.17",
+    "typedoc-plugin-markdown": "^4.10.0",
+    "typescript": "^5.9.3",
+    "vitepress": "^1.6.4"
   }
 }
