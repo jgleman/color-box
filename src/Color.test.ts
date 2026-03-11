@@ -1,6 +1,6 @@
 import { expect, test } from "@jest/globals";
 import { Color } from "./Color.js";
-//
+import { isColorValid } from "./isColorValid.js";
 
 test("test that #336699 creates a color with hex value 336699", () => {
   const color = new Color("#336699");
@@ -107,7 +107,20 @@ test("test that hsl(0.555turn 50% 50%) creates a color with hex value 4095bf", (
   expect(color.hex).toBe("4095bf");
 });
 
-test("test that empty string does... something", () => {
+test("test that empty string produces an invalid color", () => {
   const color = new Color("");
-  expect(color.hex).toBe(undefined);
+  expect(color.hex).toBe("");
+  expect(isColorValid(color)).toBe(false);
+});
+
+test("test that an invalid hex string produces an invalid color", () => {
+  const color = new Color("#gggggg");
+  expect(color.hex).toBe("");
+  expect(isColorValid(color)).toBe(false);
+});
+
+test("test that an unrecognized string produces an invalid color", () => {
+  const color = new Color("notacolor");
+  expect(color.hex).toBe("");
+  expect(isColorValid(color)).toBe(false);
 });

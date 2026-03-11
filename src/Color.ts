@@ -11,28 +11,31 @@ import { rgbToHex } from "./internal/rgbToHex.js";
 import { hslToRGB } from "./internal/hslToRGB.js";
 import { parseHSL } from "./internal/parseHSL.js";
 import { parseRGB } from "./internal/parseRGB.js";
+import { isValidHex } from "./internal/isValidHex.js";
 
 export class Color implements ColorType {
   hex!: string;
   rgb!: RGBColor;
   hsl!: HSLColor;
 
+  private _setInvalid(): void {
+    this.hex = "";
+    this.rgb = { r: 0, g: 0, b: 0 };
+    this.hsl = { h: 0, s: 0, l: 0 };
+  }
+
   constructor(color?: string | RGBColor | HSLColor) {
     if (typeof color === "string") {
       if (color.charAt(0) === "#") {
-        // is input a string
         const hexColor = color.split("#")[1];
-        this.hex = hexColor;
-        this.rgb = hexToRGB(hexColor);
-        this.hsl = rgbToHSL(this.rgb);
-      } else if (
-        typeof color === "string" &&
-        (color.length === 3 ||
-          color.length === 4 ||
-          color.length === 6 ||
-          color.length === 8)
-      ) {
-        // is input a HexColor
+        if (isValidHex(hexColor)) {
+          this.hex = hexColor;
+          this.rgb = hexToRGB(hexColor);
+          this.hsl = rgbToHSL(this.rgb);
+        } else {
+          this._setInvalid();
+        }
+      } else if (isValidHex(color)) {
         this.hex = color;
         this.rgb = hexToRGB(color);
         this.hsl = rgbToHSL(this.rgb);
@@ -44,6 +47,8 @@ export class Color implements ColorType {
         this.rgb = parseRGB(color);
         this.hsl = rgbToHSL(this.rgb);
         this.hex = rgbToHex(this.rgb);
+      } else {
+        this._setInvalid();
       }
     } else if (isHSLColor(color)) {
       this.hsl = color;
