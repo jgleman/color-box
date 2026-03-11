@@ -45,9 +45,9 @@ export function hslToRGB(hslColor: HSLColor): RGBColor {
   const M = l - C / 2;
 
   const rgb: RGBColor = {
-    r: (r1 + M) * 255,
-    g: (g1 + M) * 255,
-    b: (b1 + M) * 255,
+    r: Math.round((r1 + M) * 255),
+    g: Math.round((g1 + M) * 255),
+    b: Math.round((b1 + M) * 255),
     a: a,
   };
 

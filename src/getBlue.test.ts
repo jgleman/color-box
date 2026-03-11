@@ -37,9 +37,9 @@ test("getBlue of #234567 as percentage to equal 40.3921568627451", () => {
   expect(getBlue(color, "percentage")).toEqual(40.3921568627451);
 });
 
-test("getBlue of hsl(123, 45, 60) as raw to equal 111.68999999999997", () => {
+test("getBlue of hsl(123, 45, 60) as raw to equal 112", () => {
   const color = new Color("hsl(123, 45%, 60%)");
-  expect(getBlue(color, "raw")).toEqual(111.68999999999997);
+  expect(getBlue(color, "raw")).toEqual(112);
 });
 
 test("getBlue passing no color, result should be error", () => {
