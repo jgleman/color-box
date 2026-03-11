@@ -23,6 +23,6 @@ export function contrast(color1: Color, color2: Color): string {
   const brightest = Math.max(lum1, lum2);
   const darkest = Math.min(lum1, lum2);
 
-  const ratio = (((brightest + 0.05) / (darkest + 0.05)) * 100) / 100;
+  const ratio = (brightest + 0.05) / (darkest + 0.05);
   return `${ratio.toFixed(1)}:1`;
 }
