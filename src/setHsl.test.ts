@@ -1,7 +1,7 @@
 import { expect, test } from "@jest/globals";
-import { Color } from "./Color";
-import { setHsl } from "./setHsl";
-import { hexString } from "./hexString";
+import { Color } from "./Color.js";
+import { setHsl } from "./setHsl.js";
+import { hexString } from "./hexString.js";
 
 test("set hue of 100 should return #559933", () => {
   const color = new Color("#336699");
@@ -17,20 +17,19 @@ test("set hue of 361 should thow an error", () => {
 
 test("set hsl missing object should return #336699", () => {
   const color = new Color("#336699");
-  //@ts-ignore
+  //@ts-expect-error missing second argument
   expect(hexString(setHsl(color))).toBe("#336699");
 });
 
-test("set hsl missing color should thow an error", () => {
+test("set hsl missing color should thow an error", () =>
   expect(() => {
-    //@ts-ignore
+    //@ts-expect-error missing arguments
     setHsl();
-  }).toThrow("Invalid Color");
-});
+  }).toThrow("Invalid Color"));
 
 test("set hsl undefined color should thow an error", () => {
   expect(() => {
-    //@ts-ignore
+    //@ts-expect-error undefined is not a Color
     setHsl(undefined, {});
   }).toThrow("Invalid Color");
 });
@@ -38,7 +37,6 @@ test("set hsl undefined color should thow an error", () => {
 test("set hsl invalid color should thow an error", () => {
   const color = new Color("#hsl");
   expect(() => {
-    //@ts-ignore
     setHsl(color, {});
   }).toThrow("Invalid Color");
 });
@@ -78,9 +76,9 @@ test("set lightness of 1 should return #010304", () => {
   expect(hexString(setHsl(color, { l: 1.0 }))).toBe("#010304");
 });
 
-test("set lightness of 1.0 (string) should return #FFFFFF", () => {
+test("set lightness of 100% (string) should return #FFFFFF", () => {
   const color = new Color("#336699");
-  expect(hexString(setHsl(color, { l: "1.0" }))).toBe("#ffffff");
+  expect(hexString(setHsl(color, { l: "100%" }))).toBe("#ffffff");
 });
 
 test("set lightness of 0 should return #000000", () => {
@@ -127,9 +125,9 @@ test("set saturation of 1 should return #656667", () => {
   expect(hexString(setHsl(color, { s: 1.0 }))).toBe("#656667");
 });
 
-test("set saturation of 1.0 (string) should return #0066CC", () => {
+test("set saturation of 100% (string) should return #0066CC", () => {
   const color = new Color("#336699");
-  expect(hexString(setHsl(color, { s: "1.0" }))).toBe("#0066cc");
+  expect(hexString(setHsl(color, { s: "100%" }))).toBe("#0066cc");
 });
 
 test("set saturation of .5 should return #bf4040", () => {

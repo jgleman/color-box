@@ -1,7 +1,7 @@
 import { expect, test } from "@jest/globals";
-import { Color } from "./Color";
-import { setAlpha } from "./setAlpha";
-import { hexString } from "./hexString";
+import { Color } from "./Color.js";
+import { setAlpha } from "./setAlpha.js";
+import { hexString } from "./hexString.js";
 
 test("set alpha of 1 should return #33669903", () => {
   const color = new Color("#336699");
@@ -23,9 +23,9 @@ test("set alpha of 0.1 should return #33669903", () => {
   expect(hexString(setAlpha(color, 1.0))).toBe("#33669903");
 });
 
-test("set alpha of 1.0 (string) should return #33669903ff", () => {
+test("set alpha of 100% (string) should return #336699ff", () => {
   const color = new Color("#336699");
-  expect(hexString(setAlpha(color, "1.0"))).toBe("#336699ff");
+  expect(hexString(setAlpha(color, "100%"))).toBe("#336699ff");
 });
 
 test("set alpha of 0 should return #33669900", () => {
@@ -52,7 +52,7 @@ test("set alpha of 101 should thow an error", () => {
 
 test("setAlpha, color is missing, result should be error", () => {
   expect(() => {
-    //@ts-ignore
+    //@ts-expect-error expects two arguments
     expect(setAlpha());
   }).toThrow("Invalid Color");
 });

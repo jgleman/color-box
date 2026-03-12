@@ -1,27 +1,16 @@
-import Color from "./Color";
-import { HSLColor } from "./types";
-import { handlePercentInput } from "./internal/handlePercentInput";
-import { isColorValid } from "./isColorValid";
+import { Color } from "./Color.js";
+import { HSLColor } from "./types.js";
+import { handlePercentInput } from "./internal/handlePercentInput.js";
+import { isColorValid } from "./isColorValid.js";
 /**
  * Set the saturation value for a color to a specific value.
  *
- * @param color the color to set the value for
- * @param saturation a number or string between [0,1.0] or 0 and 100 representing
- * lightness as a percentage (1 will be treated at 1% whereas 1.0 will treated
- * as 1%, however, 1.0 must be entered as a string because JavaScript
- * cannot distinguish between 1 and 1.0 as a number.
- * @returns a new color with the new saturation value
- */
-
-/**
- * setSaturation is a function that takes in a color and a saturation value, and returns a new color with the given saturation.
- *
- * @param {Color} color - The color that needs to have its saturation set.
- * @param {number | string} saturation - The saturation value to set. Accepted input formats are either a number between 0 and 100, or a string representing a percentage (e.g. "50%").
- * @return {Color} A new color with the given saturation.
+ * @param color - The color to set the value for.
+ * @param saturation - A number between 0 and 100, or a percentage string (e.g. "50%").
+ * @returns A new color with the given saturation.
  *
  * @throws Invalid Color if the color parameter is not a valid color
- * @throws {Error} If the color is invalid or the saturation value is invalid (not a number between 0 and 100 or not a string in the format of "%d%").
+ * @throws {Error} If the saturation value is out of range.
  */
 
 export function setSaturation(

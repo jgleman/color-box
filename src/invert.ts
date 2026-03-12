@@ -1,6 +1,6 @@
-import { RGBColor } from "./types";
-import { Color } from "./Color";
-import { isColorValid } from "./isColorValid";
+import { RGBColor } from "./types.js";
+import { Color } from "./Color.js";
+import { isColorValid } from "./isColorValid.js";
 
 /**
  *

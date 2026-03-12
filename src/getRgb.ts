@@ -1,5 +1,5 @@
-import Color from "./Color";
-import { isColorValid } from "./isColorValid";
+import { Color } from "./Color.js";
+import { isColorValid } from "./isColorValid.js";
 
 /**
  * Get the RGB values for a color.
@@ -13,7 +13,7 @@ import { isColorValid } from "./isColorValid";
  */
 export function getRgb(
   color: Color,
-  mode: string = "decimal"
+  mode: "decimal" | "percentage" | "raw" = "decimal"
 ): { r: number; g: number; b: number } {
   if (!isColorValid(color)) throw new Error("Invalid Color");
 

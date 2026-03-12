@@ -1,7 +1,7 @@
-import Color from "./Color";
-import { isColorValid } from "./isColorValid";
+import { Color } from "./Color.js";
+import { isColorValid } from "./isColorValid.js";
 
-import { relativeLuminence } from "./relativeLuminence";
+import { relativeLuminance } from "./relativeLuminance.js";
 
 /**
  * The `contrast` function calculates the contrast ratio between two colors.
@@ -17,12 +17,12 @@ import { relativeLuminence } from "./relativeLuminence";
 export function contrast(color1: Color, color2: Color): string {
   if (!isColorValid(color1)) throw new Error("Invalid Color (color1)");
   if (!isColorValid(color2)) throw new Error("Invalid Color (color2)");
-  let lum1 = relativeLuminence(color1);
-  let lum2 = relativeLuminence(color2);
+  let lum1 = relativeLuminance(color1);
+  let lum2 = relativeLuminance(color2);
 
   const brightest = Math.max(lum1, lum2);
   const darkest = Math.min(lum1, lum2);
 
-  const ratio = (((brightest + 0.05) / (darkest + 0.05)) * 100) / 100;
+  const ratio = (brightest + 0.05) / (darkest + 0.05);
   return `${ratio.toFixed(1)}:1`;
 }

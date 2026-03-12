@@ -1,4 +1,4 @@
-import { RGBColor } from "../types";
+import { RGBColor } from "../types.js";
 
 export function rgbToHex(rgbColor: RGBColor): string {
   const alpha =

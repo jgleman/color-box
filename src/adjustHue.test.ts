@@ -1,8 +1,8 @@
 import { expect, test } from "@jest/globals";
 
-import { Color } from "./Color";
-import { adjustHue } from "./adjustHue";
-import { hexString } from "./hexString";
+import { Color } from "./Color.js";
+import { adjustHue } from "./adjustHue.js";
+import { hexString } from "./hexString.js";
 //
 
 test("adjust hue of 336699 by adding 100, result should be #993388", () => {
@@ -25,6 +25,16 @@ test("adjust hue of 336699 by adding 360, result should be #336699", () => {
   expect(hexString(adjustHue(color, 360))).toBe("#336699");
 });
 
+test("adjust hue of #ff0000 by -10 wraps to hue 350, result should be #ff002b", () => {
+  const red = new Color("#ff0000");
+  expect(hexString(adjustHue(red, -10))).toBe("#ff002b");
+});
+
+test("adjust hue of #ff0000 by +10 should be #ff2a00", () => {
+  const red = new Color("#ff0000");
+  expect(hexString(adjustHue(red, 10))).toBe("#ff2a00");
+});
+
 test("adjust hue of 336699 by subtracting 360, result should be #336699", () => {
   const color = new Color("#336699");
   expect(hexString(adjustHue(color, -360))).toBe("#336699");
@@ -45,7 +55,7 @@ test("color is not valid, result should be error", () => {
 });
 test("color is not valid, result should be error", () => {
   expect(() => {
-    // @ts-ignore
+    //@ts-expect-error expects two arguments
     hexString(adjustHue());
   }).toThrow("Invalid Color");
 });

@@ -1,5 +1,5 @@
-import { RGBColor } from "../types";
-import { bind } from "./bind";
+import { RGBColor } from "../types.js";
+import { bind } from "./bind.js";
 
 function round2(n: number): number {
   // aped from https://stackoverflow.com/a/32605063
@@ -23,7 +23,7 @@ export function hexToRGB(hexColor: string): RGBColor {
   const rawAlpha =
     hexColorFull.length === 8
       ? bind(parseInt(hexColorFull.substring(6, 8), 16), 255)
-      : "undefined";
+      : undefined;
 
   rgbParts.r = parseInt(hexColorFull.substring(0, 2), 16);
   rgbParts.g = parseInt(hexColorFull.substring(2, 4), 16);

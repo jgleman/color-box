@@ -1,5 +1,5 @@
-import { HSLColor } from "../types";
-import { parsePercentage } from "./parsePercentage";
+import { HSLColor } from "../types.js";
+import { parsePercentage } from "./parsePercentage.js";
 
 function parseHue(hue: string): number {
   // deg, // rad // grad //turn

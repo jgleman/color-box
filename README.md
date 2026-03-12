@@ -17,12 +17,7 @@ makes sense.
 - Immutable, always returns a new color instance.
 - TypeScript support
 
-### To Do List
-
-- more functionality
-- additional color formats (hsv, hwb, cmyk, stretch goal: oklch, oklab, other CSS4 colors)
-- optimizations
-- so much more
+**v2.0.0 highlights:** CSS named colors, color harmony functions (`analogous`, `triadic`, `splitComplement`), `readableColor`, and `setRgb`.
 
 ### Install
 
@@ -56,6 +51,13 @@ HSL:
 const myColor = new Color("hsl(210 50% 40%)");
 ```
 
+CSS named color:
+
+```JavaScript
+const myColor = new Color("coral");
+const myColor = new Color("rebeccapurple");
+```
+
 A `Color` object represents the color you have entered internally as HEX, RGB and HSL. Once you have created a Color, you can use that color in any of the provided functions:
 
 ```JavaScript
@@ -66,3 +68,32 @@ const myDarkerColor = darken(myColor, 20);
 console.log(hexString(myDarkerColor));
 // #1a334d
 ```
+
+**Color harmony:**
+
+```JavaScript
+import { Color, analogous, triadic, splitComplement, hexString } from "@jgleman/color-box";
+const [original, plus30, minus30] = analogous(myColor);
+const [original, plus120, plus240] = triadic(myColor);
+const [original, plus150, plus210] = splitComplement(myColor);
+```
+
+**Readable text color:**
+
+```JavaScript
+import { Color, readableColor, hexString } from "@jgleman/color-box";
+const textColor = readableColor(new Color("#336699")); // returns white or black
+```
+
+**Set individual RGB channels:**
+
+```JavaScript
+import { Color, setRgb, hexString } from "@jgleman/color-box";
+const newColor = setRgb(myColor, { r: 255 }); // only changes the red channel
+```
+
+### Breaking Changes from 1.x
+
+- Node.js 20 or higher is now required
+- `relativeLuminence` renamed to `relativeLuminance` (spelling fix)
+- String input `"1.0"` no longer means 100% in setter functions (`setSaturation`, `setLightness`, `setAlpha`, `setHsl`). Use `100` or `"100%"` instead.

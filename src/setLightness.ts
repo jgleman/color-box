@@ -1,7 +1,7 @@
-import Color from "./Color";
-import { HSLColor } from "./types";
-import { handlePercentInput } from "./internal/handlePercentInput";
-import { isColorValid } from "./isColorValid";
+import { Color } from "./Color.js";
+import { HSLColor } from "./types.js";
+import { handlePercentInput } from "./internal/handlePercentInput.js";
+import { isColorValid } from "./isColorValid.js";
 /**
  * Set the lightness value for a color to a specific value.
  *

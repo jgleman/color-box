@@ -1,7 +1,7 @@
 import { expect, test } from "@jest/globals";
-import { Color } from "./Color";
-import { invert } from "./invert";
-import { hexString } from "./hexString";
+import { Color } from "./Color.js";
+import { invert } from "./invert.js";
+import { hexString } from "./hexString.js";
 
 test("invert of #ffffff = #00ffff", () => {
   const color = new Color("#ff0000");
@@ -30,7 +30,7 @@ test("invert of #ff00ff = #00ff00", () => {
 
 test("invert, color is missing, result should be error", () => {
   expect(() => {
-    //@ts-ignore
+    //@ts-expect-error expects one argument
     expect(invert());
   }).toThrow("Invalid Color");
 });

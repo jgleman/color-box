@@ -1,7 +1,7 @@
 import { expect, test } from "@jest/globals";
-import { Color } from "./Color";
-import { setSaturation } from "./setSaturation";
-import { hexString } from "./hexString";
+import { Color } from "./Color.js";
+import { setSaturation } from "./setSaturation.js";
+import { hexString } from "./hexString.js";
 
 test("set saturation of 32 should return #456687", () => {
   const color = new Color("#336699");
@@ -35,9 +35,9 @@ test("set saturation of 1 should return #656667", () => {
   expect(hexString(setSaturation(color, 1.0))).toBe("#656667");
 });
 
-test("set saturation of 1.0 (string) should return #0066CC", () => {
+test("set saturation of 100% (string) should return #0066CC", () => {
   const color = new Color("#336699");
-  expect(hexString(setSaturation(color, "1.0"))).toBe("#0066cc");
+  expect(hexString(setSaturation(color, "100%"))).toBe("#0066cc");
 });
 
 test("set saturation of .5 should return #bf4040", () => {
@@ -52,7 +52,7 @@ test("set saturation of 50 should return #bf4040", () => {
 
 test("setSaturation, color is missing, result should be error", () => {
   expect(() => {
-    //@ts-ignore
+    //@ts-expect-error missing two argumetns
     expect(setSaturation());
   }).toThrow("Invalid Color");
 });

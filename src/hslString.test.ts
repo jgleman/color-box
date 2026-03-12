@@ -1,6 +1,6 @@
 import { expect, test } from "@jest/globals";
-import { Color } from "./Color";
-import { hslString } from "./hslString";
+import { Color } from "./Color.js";
+import { hslString } from "./hslString.js";
 
 test("hsl string of 336699 is hsl(210 50% 40%)", () => {
   const color = new Color("336699");

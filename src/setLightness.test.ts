@@ -1,7 +1,7 @@
 import { expect, test } from "@jest/globals";
-import { Color } from "./Color";
-import { setLightness } from "./setLightness";
-import { hexString } from "./hexString";
+import { Color } from "./Color.js";
+import { setLightness } from "./setLightness.js";
+import { hexString } from "./hexString.js";
 
 test("set lightness of 32 should return #29527A", () => {
   const color = new Color("#336699");
@@ -38,9 +38,9 @@ test("set lightness of 1 should return #010304", () => {
   expect(hexString(setLightness(color, 1.0))).toBe("#010304");
 });
 
-test("set lightness of 1.0 (string) should return #FFFFFF", () => {
+test("set lightness of 100% (string) should return #FFFFFF", () => {
   const color = new Color("#336699");
-  expect(hexString(setLightness(color, "1.0"))).toBe("#ffffff");
+  expect(hexString(setLightness(color, "100%"))).toBe("#ffffff");
 });
 
 test("set lightness of 0 should return #000000", () => {
@@ -57,7 +57,7 @@ test("set lightness of 101 should thow an error", () => {
 
 test("setLightness, color is missing, result should be error", () => {
   expect(() => {
-    //@ts-ignore
+    //@ts-expect-error expects two arguments
     expect(setLightness());
   }).toThrow("Invalid Color");
 });

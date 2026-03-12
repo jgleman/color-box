@@ -1,7 +1,7 @@
 import { expect, test } from "@jest/globals";
-import { Color } from "./Color";
-import { hexString } from "./hexString";
-import { mix } from "./mix";
+import { Color } from "./Color.js";
+import { hexString } from "./hexString.js";
+import { mix } from "./mix.js";
 
 // tests here from Sass Spec, goal is to match the mixing algorithm from Sass
 // https://github.com/sass/sass-spec/blob/main/spec/core_functions/color/mix.hrx
@@ -254,7 +254,7 @@ test("mix color2 is not valid, result should be error", () => {
 test("mix color2 is missing, result should be error", () => {
   const color1 = new Color("#ADADAD");
   expect(() => {
-    //@ts-ignore
+    //@ts-expect-error expects two or three arguments
     expect(mix(color1));
   }).toThrow("Invalid Color");
 });

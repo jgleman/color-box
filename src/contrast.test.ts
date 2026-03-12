@@ -1,6 +1,6 @@
 import { expect, test } from "@jest/globals";
-import { Color } from "./Color";
-import { contrast } from "./contrast";
+import { Color } from "./Color.js";
+import { contrast } from "./contrast.js";
 
 test("contrast #ff0000 to #ff0000 is 1.0:1", () => {
   const color1 = new Color("#ff0000");
@@ -40,7 +40,7 @@ test("contrast color2 is not valid, result should be error", () => {
 test("contrast color2 is missing, result should be error", () => {
   const color1 = new Color("#ADADAD");
   expect(() => {
-    //@ts-ignore
+    //@ts-expect-error expects two arguments
     expect(contrast(color1));
   }).toThrow("Invalid Color");
 });

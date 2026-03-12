@@ -1,5 +1,5 @@
-import Color from "./Color";
-import { isColorValid } from "./isColorValid";
+import { Color } from "./Color.js";
+import { isColorValid } from "./isColorValid.js";
 
 /**
  * Get the hue value for a color.

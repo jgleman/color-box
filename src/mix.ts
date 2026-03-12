@@ -1,6 +1,6 @@
-import Color from "./Color";
-import { RGBColor } from "./types";
-import { isColorValid } from "./isColorValid";
+import { Color } from "./Color.js";
+import { RGBColor } from "./types.js";
+import { isColorValid } from "./isColorValid.js";
 
 /**
  * Mix two colors together by a specified weight
@@ -58,7 +58,7 @@ export function mix(color1: Color, color2: Color, weight: number = 50): Color {
   // Let red1 and red2 be the red channels of $color1 and $color2 respectively.
   // Let red be red1 * weight1 + red2 * weight2.
   // Let green1 and green2 be the green channels of $color1 and $color2 respectively.
-  // Let red be red1 * weight1 + red2 * weight2.
+  // Let green be green1 * weight1 + green2 * weight2.
   // Let blue1 and blue2 be the blue channels of $color1 and $color2 respectively.
   // Let blue be blue1 * weight1 + blue2 * weight2.
   // Let alpha be alpha1 * weight-scale + alpha2 * (1 - weight-scale).

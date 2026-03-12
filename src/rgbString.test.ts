@@ -1,6 +1,6 @@
 import { expect, test } from "@jest/globals";
-import { Color } from "./Color";
-import { rgbString } from "./rgbString";
+import { Color } from "./Color.js";
+import { rgbString } from "./rgbString.js";
 
 test("rgb string of 336699 is rgb(51 102 153)", () => {
   const color = new Color("336699");

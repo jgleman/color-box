@@ -1,6 +1,6 @@
 import { expect, test } from "@jest/globals";
-import { Color } from "./Color";
-import { getAlpha } from "./getAlpha";
+import { Color } from "./Color.js";
+import { getAlpha } from "./getAlpha.js";
 
 test("getAlpha of 33669980", () => {
   const color = new Color("#33669980");
@@ -29,7 +29,7 @@ test("getAlpha of 336699", () => {
 
 test("getAlpha, color is missing, result should be error", () => {
   expect(() => {
-    //@ts-ignore
+    //@ts-expect-error expects one argument
     expect(getAlpha());
   }).toThrow("Invalid Color");
 });

@@ -1,7 +1,7 @@
 import { expect, test } from "@jest/globals";
-import { Color } from "./Color";
-import { desaturate } from "./desaturate";
-import { hexString } from "./hexString";
+import { Color } from "./Color.js";
+import { desaturate } from "./desaturate.js";
+import { hexString } from "./hexString.js";
 
 test("desaturate #dda0dd by 100% = #bfbfbf", () => {
   const color = new Color("#dda0dd");
@@ -23,9 +23,14 @@ test("desaturate #dda0dd by 14% = #dda0dd", () => {
   expect(hexString(desaturate(color, 14))).toBe("#d4a9d4");
 });
 
+test("desaturate #dda0dd by -14% (negative) = #e697e6 (same as saturate 14%)", () => {
+  const color = new Color("#dda0dd");
+  expect(hexString(desaturate(color, -14))).toBe("#e697e6");
+});
+
 test("desaturate, color is missing, result should be error", () => {
   expect(() => {
-    //@ts-ignore
+    //@ts-expect-error expects two arguments
     expect(desaturate());
   }).toThrow("Invalid Color");
 });

@@ -1,5 +1,5 @@
-import Color from "./Color";
-import { isColorValid } from "./isColorValid";
+import { Color } from "./Color.js";
+import { isColorValid } from "./isColorValid.js";
 
 /**
  * @returns The a string of the RGB representation of a color, e.g. rgb(51 102 153)
