@@ -12,6 +12,7 @@ import { hslToRGB } from "./internal/hslToRGB.js";
 import { parseHSL } from "./internal/parseHSL.js";
 import { parseRGB } from "./internal/parseRGB.js";
 import { isValidHex } from "./internal/isValidHex.js";
+import { namedColors } from "./internal/namedColors.js";
 
 export class Color implements ColorType {
   hex!: string;
@@ -26,7 +27,12 @@ export class Color implements ColorType {
 
   constructor(color?: string | RGBColor | HSLColor) {
     if (typeof color === "string") {
-      if (color.charAt(0) === "#") {
+      const namedHex = namedColors[color.toLowerCase()];
+      if (namedHex) {
+        this.hex = namedHex;
+        this.rgb = hexToRGB(namedHex);
+        this.hsl = rgbToHSL(this.rgb);
+      } else if (color.charAt(0) === "#") {
         const hexColor = color.split("#")[1];
         if (isValidHex(hexColor)) {
           this.hex = hexColor;
