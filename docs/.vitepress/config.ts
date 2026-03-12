@@ -39,6 +39,7 @@ export default defineConfig({
               { text: "setHsl", link: "/api/functions/setHsl" },
               { text: "setHue", link: "/api/functions/setHue" },
               { text: "setLightness", link: "/api/functions/setLightness" },
+              { text: "setRgb", link: "/api/functions/setRgb" },
               { text: "setSaturation", link: "/api/functions/setSaturation" },
             ],
           },
@@ -54,10 +55,19 @@ export default defineConfig({
             ],
           },
           {
+            text: "Harmony",
+            collapsed: false,
+            items: [
+              { text: "analogous", link: "/api/functions/analogous" },
+              { text: "complement", link: "/api/functions/complement" },
+              { text: "splitComplement", link: "/api/functions/splitComplement" },
+              { text: "triadic", link: "/api/functions/triadic" },
+            ],
+          },
+          {
             text: "Transformations",
             collapsed: false,
             items: [
-              { text: "complement", link: "/api/functions/complement" },
               { text: "grayscale", link: "/api/functions/grayscale" },
               { text: "invert", link: "/api/functions/invert" },
               { text: "mix", link: "/api/functions/mix" },
@@ -77,6 +87,7 @@ export default defineConfig({
             collapsed: false,
             items: [
               { text: "contrast", link: "/api/functions/contrast" },
+              { text: "readableColor", link: "/api/functions/readableColor" },
               {
                 text: "relativeLuminance",
                 link: "/api/functions/relativeLuminance",
