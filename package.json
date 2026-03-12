@@ -25,7 +25,6 @@
     "test": "jest",
     "build": "npm run clean:dist && npm run test && pkgroll --target-es2020 --minify",
     "watch": "pkgroll --watch --target-es2020 --minify",
-    "docs:generate": "typedoc",
     "docs:dev": "vitepress dev docs",
     "docs:build": "typedoc && vitepress build docs",
     "docs:preview": "vitepress preview docs"

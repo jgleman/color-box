@@ -23,6 +23,11 @@ test("desaturate #dda0dd by 14% = #dda0dd", () => {
   expect(hexString(desaturate(color, 14))).toBe("#d4a9d4");
 });
 
+test("desaturate #dda0dd by -14% (negative) = #e697e6 (same as saturate 14%)", () => {
+  const color = new Color("#dda0dd");
+  expect(hexString(desaturate(color, -14))).toBe("#e697e6");
+});
+
 test("desaturate, color is missing, result should be error", () => {
   expect(() => {
     //@ts-expect-error expects two arguments

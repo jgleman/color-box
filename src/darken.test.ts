@@ -25,6 +25,10 @@ test("darken #ff0000 0.5% = #fc0000", () => {
   expect(hexString(darken(color, 0.5))).toBe("#fc0000");
 });
 
+test("darken #ff0000 by -14% (negative) = #ff4747 (same as lighten 14%)", () => {
+  expect(hexString(darken(color, -14))).toBe("#ff4747");
+});
+
 test("darken, color is missing, result should be error", () => {
   expect(() => {
     //@ts-expect-error expects two arguments

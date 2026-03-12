@@ -29,6 +29,16 @@ test("readableColor of #ffffff returns a valid color", () => {
   expect(isColorValid(readableColor(color))).toBe(true);
 });
 
+test("readableColor of #757575 (luminance just below threshold) returns #ffffff", () => {
+  const color = new Color("#757575");
+  expect(hexString(readableColor(color))).toBe("#ffffff");
+});
+
+test("readableColor of #767676 (luminance just above threshold) returns #000000", () => {
+  const color = new Color("#767676");
+  expect(hexString(readableColor(color))).toBe("#000000");
+});
+
 test("readableColor with invalid color throws Invalid Color", () => {
   expect(() => {
     //@ts-expect-error missing argument
