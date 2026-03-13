@@ -1,5 +1,14 @@
 # Changelog
 
+## 2.0.1
+
+### Bug Fixes
+- Fixed stale JSDoc on `setAlpha`, `setLightness`, `setHsl`, `setSaturation` — descriptions referenced the removed `"1.0"` string behavior and incorrectly said "lightness" in `setAlpha`
+- Fixed `getBlue` and `getGreen` JSDoc saying "returns the red value"
+- Fixed `complement` JSDoc saying "RGB complement" — it operates on HSL (hue + 180°)
+- Fixed `getAlpha` JSDoc grammar ("undefined color has no alpha" → "if the color has no alpha")
+- Updated error messages in `setAlpha`, `setLightness`, `setHsl`, `setSaturation` to remove stale "0.0 and 1.0" phrasing
+
 ## 2.0.0
 
 ### New Features

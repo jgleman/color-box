@@ -9,7 +9,7 @@ import { getRgb } from "./getRgb.js";
  * * decimal (default): each color component represented as an integer between 0-255.
  * * percentage: each color component represented as a percentage
  * * raw. Raw is the internal color object values, with no rounding
- * @returns the red value of the color
+ * @returns the green value of the color
  */
 export function getGreen(color: Color, mode: "decimal" | "percentage" | "raw" = "decimal"): number {
   return getRgb(color, mode).g;
