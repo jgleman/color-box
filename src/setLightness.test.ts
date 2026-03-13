@@ -52,7 +52,7 @@ test("set lightness of 101 should thow an error", () => {
   const color = new Color("#336699");
   expect(() => {
     hexString(setLightness(color, 101));
-  }).toThrow("Lightness must be between 0.0 and 1.0 or 0 and 100");
+  }).toThrow("Lightness must be between 0 and 100");
 });
 
 test("setLightness, color is missing, result should be error", () => {

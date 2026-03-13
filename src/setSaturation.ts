@@ -21,7 +21,7 @@ export function setSaturation(
   const validate =
     typeof saturation === "string" ? parseFloat(saturation) : saturation;
   if (isNaN(validate) || validate < 0 || validate > 100) {
-    throw new Error("Saturation must be between 0.0 and 1.0 or 0 and 100");
+    throw new Error("Saturation must be between 0 and 100");
   }
 
   const asHSL: HSLColor = { ...color.hsl };

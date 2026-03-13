@@ -47,7 +47,7 @@ test("set alpha of 101 should thow an error", () => {
   const color = new Color("#336699");
   expect(() => {
     hexString(setAlpha(color, 101));
-  }).toThrow("Alpha must be between 0.0 and 1.0 or 0 and 100");
+  }).toThrow("Alpha must be between 0 and 100");
 });
 
 test("setAlpha, color is missing, result should be error", () => {
