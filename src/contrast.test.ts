@@ -44,3 +44,18 @@ test("contrast color2 is missing, result should be error", () => {
     expect(contrast(color1));
   }).toThrow("Invalid Color");
 });
+
+// regression test for
+// https://github.com/jgleman/color-box/issues/30
+// reported by https://ucsbplse.github.io/
+test("contrast #0000ff to #ffffff is 8.6:1", () => {
+  const color1 = new Color("#0000ff");
+  const color2 = new Color("#ffffff");
+  expect(contrast(color1, color2)).toBe("8.6:1");
+});
+
+test("contrast #0658fa to #ffffff is 5.5:1", () => {
+  const color1 = new Color("#0658fa");
+  const color2 = new Color("#ffffff");
+  expect(contrast(color1, color2)).toBe("5.5:1");
+});

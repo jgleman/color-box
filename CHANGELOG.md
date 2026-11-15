@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.0.2
+### Bug Fix
+- Fixed `relativeLuminance` checking the red channel instead of the blue channel when converting blue, which gave wrong luminance for colors with little or no red (red ≤ 10) but some blue (e.g. `#0000ff`). This also caused wrong results in `contrast` and `readableColor`. ([#30](https://github.com/jgleman/color-box/issues/30), reported by [trackoor](https://github.com/trackoor) / [UCSB PLSE](https://ucsbplse.github.io/))
+
 ## 2.0.1
 
 ### Bug Fixes

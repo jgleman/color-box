@@ -45,3 +45,11 @@ test("readableColor with invalid color throws Invalid Color", () => {
     readableColor();
   }).toThrow("Invalid Color");
 });
+
+// regression test for
+// https://github.com/jgleman/color-box/issues/30
+// reported by https://ucsbplse.github.io/
+test("readableColor of #0070ff returns #000000", () => {
+  const color = new Color("#0070ff");
+  expect(hexString(readableColor(color))).toBe("#000000");
+});
