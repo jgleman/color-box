@@ -28,3 +28,11 @@ test("relativeLuminance, color is missing, result should be error", () => {
     expect(relativeLuminance());
   }).toThrow("Invalid Color");
 });
+
+// regression test for
+// https://github.com/jgleman/color-box/issues/30
+// reported by https://ucsbplse.github.io/
+test("relativeLuminance of #0000ff (pure blue) = 0.0722", () => {
+  const color = new Color("#0000ff");
+  expect(relativeLuminance(color)).toBe(0.0722);
+});
