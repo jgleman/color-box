@@ -1,4 +1,5 @@
 import { defineConfig } from "vitepress";
+import pkg from "../../package.json" with { type: "json" };
 
 export default defineConfig({
   title: "color-box",
@@ -10,6 +11,10 @@ export default defineConfig({
       { text: "Home", link: "/" },
       { text: "API Reference", link: "/api/classes/Color" },
       { text: "Website", link: "https://jgleman.com/color-box/" },
+      {
+        text: `v${pkg.version}`,
+        link: "https://github.com/jgleman/color-box/blob/main/CHANGELOG.md",
+      },
     ],
 
     sidebar: [
